@@ -69,6 +69,13 @@
   figure{margin:22px 0 0}
   figure svg{width:100%;height:auto;display:block}
   figcaption{font-size:14px;color:var(--ink2);margin-top:8px;text-align:center}
+  figure.movie video{width:100%;height:auto;display:block;border-radius:16px;border:1px solid var(--line);box-shadow:0 10px 26px rgba(10,90,98,.16);background:#0A5A62}
+  .gains{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .gain{display:grid;grid-template-columns:64px 1fr;gap:14px;align-items:start;background:var(--goldbg);border:1px solid #EBD9AE;border-radius:16px;padding:16px 18px}
+  .gain img{width:64px;height:auto}
+  .gain b{display:block;font-size:18px;color:var(--deep);font-weight:800;line-height:1.5;margin-bottom:4px}
+  .gain p{margin:0;font-size:16px;color:var(--ink2)}
+  @media (max-width:640px){.gains{grid-template-columns:1fr}}
   figure.chirashi{margin:18px auto 0;max-width:380px}
   figure.chirashi img{width:100%;border:1px solid var(--line);border-radius:12px;box-shadow:0 6px 18px rgba(14,124,134,.12)}
 
@@ -184,13 +191,18 @@
       <p>先週の売上は表に入り、月次の報告文はもう書けています。<br>社長がやるのは、目を通して「これで出して」と言うことだけ。</p>
       <p>特別な会社の話ではありません。<br>毎月くり返している事務を<span class="kv">ひとつずつAIに渡していった</span>会社の、ふつうの朝です。</p>
     </div>
+    <figure class="movie">
+      <video src="img/asa30.mp4" poster="img/asa30_poster.jpg" autoplay muted loop playsinline controls preload="metadata" width="1280" height="720"></video>
+      <figcaption>講師の会社の、今朝（10月19日・月曜）の実物です。<br>5時37分から7時30分まで、人は何もしていません。（30秒・音なし）</figcaption>
+    </figure>
   </section>
 
   <!-- 2 問題 -->
   <section>
     <h2 class="maru">「体験」のあとに、必ず来る壁</h2>
     <p>御会の11月19日「AI体験セミナー」のご案内を拝見しました。<br>3月に続いての開催とのこと、会員企業の皆さまの関心の高さを感じます。</p>
-    <p>資料を聴ける形にする、社内の問い合わせにAIが答える、文章から図を作る。<br>AIが「できること」を知る入口として、とてもよい内容だと思います。</p>
+    <p>資料を聴ける形にする、社内の問い合わせにAIが答える、文章から図を作る。<br>会員企業の皆さまがAIに触れる場として、とてもよい内容だと思います。</p>
+    <p>だからこそ、参加された方が会社に戻ったあとに<span class="kv">「次の一歩」</span>を用意できればと考えました。</p>
     <div class="card">
       <p class="q maru">「すごいのは分かった。<br>で、明日からうちの仕事は誰がやるの？」</p>
       <p>体験のあと、会社に戻った方が必ずぶつかるのが、この問いです。<br>AIに質問はできるようになった。<br>けれど、毎月くり返す事務はまだ全部、人の手の中にある。</p>
@@ -246,7 +258,7 @@
         <text x="650" y="272" text-anchor="middle" class="f w">翌朝、下書きが並んでいる</text>
         <text x="650" y="300" text-anchor="middle" class="f w" style="font-weight:600;font-size:14px">人は、目を通して「出す」を決めるだけ</text>
       </svg>
-      <figcaption>「答えが出る」で終わるか、「作業が終わっている」まで行くか。ここが体験の次の段階です。</figcaption>
+      <figcaption>「答えが出る」と「作業が終わっている」。どちらも大事で、順番があります。</figcaption>
     </figure>
   </section>
 
@@ -277,6 +289,17 @@
     <p class="note" style="margin-top:14px">AIのアカウントは不要です。体験は指示書づくりが中心で、実際に動かすのは講師の画面で行います。すでにClaudeをお使いの方は、ご自身のPCでも試していただけます。</p>
   </section>
 
+  <!-- 4.5 御会にとって -->
+  <section>
+    <h2 class="maru">御会にとって、うれしいこと</h2>
+    <div class="gains">
+      <div class="gain"><img src="img/mascot_point.webp" alt="" width="64" height="64"><div><b>「次は？」への答えになります</b><p>11月19日に参加された会員から「その次は？」と聞かれたときに、ご案内できる1回になります。</p></div></div>
+      <div class="gain"><img src="img/mascot_base.webp" alt="" width="64" height="64"><div><b>ご負担は、日程と会場だけです</b><p>告知文・チラシのたたき台・申込の質問項目・当日資料・事後の手順ページまで、こちらで用意します。</p></div></div>
+      <div class="gain"><img src="img/mascot_invite.webp" alt="" width="64" height="64"><div><b>「面白かった」が「うちで動いた」に変わります</b><p>参加者は自社の指示書を1枚持ち帰ります。会員アンケートに、具体的な声が残ります。</p></div></div>
+      <div class="gain"><img src="img/mascot_think.webp" alt="" width="64" height="64"><div><b>年度内の制度に間に合う時期です</b><p>都と国の助成金の締切前に開けるので、会員企業から見て「いま聞く理由」がはっきりします。</p></div></div>
+    </div>
+  </section>
+
   <!-- 5 御会にとって -->
   <section>
     <h2 class="maru">御会にお願いしたいこと・こちらで用意すること</h2>
@@ -300,7 +323,7 @@
         </dl>
       </div>
     </div>
-    <p class="note" style="margin-top:14px">時期は2027年1月下旬〜2月を考えていますが、御会のご都合を優先します。11月19日の会の「続編」として告知いただけると、参加者にも流れが伝わりやすいと思います。</p>
+    <p class="note" style="margin-top:14px">時期は2027年1月下旬〜2月を考えていますが、御会のご都合を優先します。11月19日に参加された方にも「次の一歩」としてご案内いただけると、流れが伝わりやすいと思います。</p>
   </section>
 
   <!-- 6 なぜいま -->
