@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>AI体験の、その次へ｜会員向け実装セミナーのご提案</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light">
+<meta name="description" content="サイバーシルクロード八王子 会員企業向け「AIに自分の仕事をひとつ任せてみる」2時間セミナーのご提案（fulfull株式会社 森川満章）">
+<meta property="og:title" content="AI体験の、その次へ｜会員向け実装セミナーのご提案">
+<meta property="og:description" content="AIを「見る」から、AIに「任せる」へ。会員企業の毎月くり返す事務を、その場でAIが進めるところまで動かす2時間。">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@700;900&family=Noto+Sans+JP:wght@500;700;800&display=swap">
+<style>
+  :root{
+    color-scheme:light;
+    --teal:#0E7C86; --deep:#0A5A62; --ink:#1C3236; --ink2:#4A6468;
+    --soft:#EEF6F7; --line:#D5E4E6; --gold:#A87A1F; --goldfill:#D9A441; --goldbg:#FBF4E3; --bg:#fff;
+    --ok:#1E7D5A; --okbg:#EAF6F0;
+  }
+  *{box-sizing:border-box;min-width:0}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Noto Sans JP","Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;
+    font-size:18px;font-weight:500;line-height:1.9;text-wrap:pretty;word-break:auto-phrase}
+  .wrap{max-width:860px;margin:0 auto;padding:0 20px 80px}
+  p{margin:0 0 .9em}
+  a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+  .maru{font-family:"Zen Maru Gothic","Noto Sans JP",sans-serif;font-weight:900}
+  .kv{color:var(--deep);font-weight:700}
+  .note{font-size:14.5px;color:var(--ink2);line-height:1.8}
+  img{max-width:100%;height:auto;display:block}
+
+  /* ---------- hero ---------- */
+  .topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:22px 0 0;font-size:14.5px;color:var(--ink2);font-weight:700}
+  .topbar .brand{display:flex;align-items:center;gap:10px;color:var(--deep)}
+  .topbar .mark{width:30px;height:30px;border-radius:9px;background:var(--teal);color:#fff;display:grid;place-items:center;font-weight:900;font-size:16px}
+  .hero{padding:34px 0 10px;display:grid;grid-template-columns:1fr 170px;gap:22px;align-items:center}
+  .hero img{width:170px;justify-self:end}
+  .eyebrow{display:inline-block;background:var(--soft);color:var(--deep);border:1px solid var(--line);border-radius:999px;padding:4px 14px;font-size:14px;font-weight:700;letter-spacing:.06em;margin-bottom:14px}
+  h1{font-size:clamp(28px,6.6vw,42px);line-height:1.35;margin:0 0 14px;color:var(--deep)}
+  h1 .sub{display:block;font-size:.5em;color:var(--ink2);font-family:"Noto Sans JP",sans-serif;font-weight:700;margin-top:10px;line-height:1.6}
+  .to{margin:0;font-size:16.5px;color:var(--ink2)}
+  .to b{color:var(--ink);font-weight:800}
+  @media (max-width:560px){.hero{grid-template-columns:1fr}.hero img{width:130px;justify-self:center;order:-1}}
+
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:26px 0 8px}
+  .fact{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+  .fact span{display:block;font-size:13.5px;color:var(--ink2);font-weight:700;letter-spacing:.04em}
+  .fact b{display:block;font-size:16.5px;line-height:1.5;margin-top:3px;font-weight:800;color:var(--deep)}
+  @media (max-width:640px){.facts{grid-template-columns:1fr 1fr}}
+
+  /* ---------- sections ---------- */
+  section{margin-top:56px}
+  h2{font-size:clamp(23px,6.2vw,30px);line-height:1.45;margin:0 0 16px;color:var(--deep);padding-left:14px;border-left:6px solid var(--goldfill);text-wrap:balance}
+  h3{font-size:19.5px;font-weight:800;line-height:1.5;margin:0 0 8px;color:var(--deep)}
+  .scene{background:var(--soft);border-radius:18px;padding:22px 24px;border:1px solid var(--line)}
+  .scene p:last-child{margin-bottom:0}
+  .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px 22px;margin-top:12px;box-shadow:0 4px 14px rgba(14,124,134,.06)}
+  .card p:last-child{margin-bottom:0}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media (max-width:640px){.two{grid-template-columns:1fr}}
+
+  /* 図解 */
+  figure{margin:22px 0 0}
+  figure svg{width:100%;height:auto;display:block}
+  figcaption{font-size:14px;color:var(--ink2);margin-top:8px;text-align:center}
+
+  /* 引用 */
+  .q{font-size:clamp(20px,5vw,24px);line-height:1.6;color:var(--teal);margin:0 0 12px}
+
+  /* 得られること */
+  .gets{list-style:none;padding:0;margin:10px 0 12px;display:grid;gap:8px}
+  .gets li{background:var(--okbg);border-radius:10px;padding:10px 14px;font-size:17px;font-weight:700}
+  .gets li::before{content:"✓ ";color:var(--ok);font-weight:800}
+  .out{font-size:15.5px;color:var(--deep);font-weight:700;background:var(--goldbg);border-radius:10px;padding:9px 12px;margin:0}
+
+  /* タイムライン */
+  .tl{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:10px}
+  .tl li{display:grid;grid-template-columns:76px 1fr;gap:14px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+  .tl .t{font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums;font-size:16px;padding-top:3px}
+  .tl b{display:block;font-size:17.5px;color:var(--deep);font-weight:800;line-height:1.5}
+  .tl p{margin:4px 0 0;font-size:16px;color:var(--ink2)}
+  @media (max-width:480px){.tl li{grid-template-columns:1fr;gap:4px}}
+
+  /* 定義リスト */
+  dl.spec{margin:14px 0 0;display:grid;grid-template-columns:120px 1fr;gap:10px 16px;font-size:17px}
+  dl.spec dt{color:var(--ink2);font-weight:700;padding-top:2px}
+  dl.spec dd{margin:0}
+  @media (max-width:480px){dl.spec{grid-template-columns:1fr;gap:2px 0}dl.spec dd{margin-bottom:10px}}
+
+  /* 実績 */
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+  .stat{background:var(--soft);border:1px solid var(--line);border-radius:16px;padding:16px 16px 12px;text-align:center}
+  .stat .big{font-size:36px;font-weight:900;color:var(--teal);line-height:1.1;margin:0}
+  .stat .big small{font-size:15px;color:var(--ink2);font-weight:700}
+  .stat p{margin:4px 0 0;font-size:14.5px;color:var(--ink2)}
+  @media (max-width:560px){.stats{grid-template-columns:1fr 1fr 1fr;gap:8px}.stat .big{font-size:28px}.stat p{font-size:13.5px}}
+  .now{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:8px}
+  .now li{background:#fff;border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:12px;padding:10px 16px;font-size:16.5px}
+  .now li b{color:var(--deep)}
+
+  /* 流れ */
+  .flow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+  .step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 18px 16px;position:relative}
+  .step .k{display:inline-block;background:var(--goldfill);color:#fff;font-weight:800;font-size:14px;border-radius:999px;padding:2px 12px;margin-bottom:8px}
+  .step h3{font-size:18px}
+  .step p{margin:0;font-size:15.5px;color:var(--ink2)}
+  @media (max-width:640px){.flow{grid-template-columns:1fr}}
+
+  /* 約束 */
+  .promise{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .promise li{background:var(--soft);border-radius:14px;padding:14px 16px;font-size:16.5px;font-weight:700;color:var(--ink)}
+  .promise li::before{content:"● ";color:var(--teal)}
+  @media (max-width:640px){.promise{grid-template-columns:1fr}}
+
+  /* 講師 */
+  .who{display:grid;grid-template-columns:1fr 300px;gap:22px;align-items:start;background:var(--soft);border-radius:18px;padding:24px;border:1px solid var(--line)}
+  .who img{width:100%;border-radius:12px;aspect-ratio:5/3;object-fit:cover}
+  .who p{font-size:16.5px}
+  .who p:last-child{margin:0}
+  .who .nm{font-size:22px;font-weight:900;color:var(--deep);margin-bottom:2px}
+  .who .rb{font-size:14.5px;color:var(--ink2);margin-bottom:12px}
+  @media (max-width:700px){.who{grid-template-columns:1fr}.who img{max-width:420px}}
+
+  /* 締め */
+  .complete{margin-top:18px;background:var(--deep);color:#fff;border-radius:18px;padding:22px 24px;display:grid;grid-template-columns:96px 1fr;gap:18px;align-items:center}
+  .complete img{width:96px}
+  .complete b{display:block;font-size:19.5px;font-weight:800;line-height:1.5;margin-bottom:4px}
+  .complete p{margin:0;font-size:16px;color:#E3F1F2}
+  @media (max-width:520px){.complete{grid-template-columns:1fr;text-align:center}.complete img{margin:0 auto}}
+
+  .contact{margin-top:28px;border:1.5px solid var(--goldfill);background:var(--goldbg);border-radius:18px;padding:20px 22px}
+  .contact p{margin:0 0 6px}
+  .contact .url{font-weight:700;word-break:break-all}
+  footer{margin-top:40px;color:var(--ink2);font-size:14px;line-height:1.9;border-top:1px solid var(--line);padding-top:18px}
+
+  @media print{
+    body{font-size:15px}
+    section{margin-top:28px;break-inside:avoid}
+    .card,.stat,.step{box-shadow:none}
+    a{text-decoration:none;color:inherit}
+    .topbar{padding-top:0}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <div class="brand"><span class="mark">f</span><span>fulfull株式会社</span></div>
+    <div>2026年10月</div>
+  </div>
+
+  <header class="hero">
+    <div>
+      <span class="eyebrow">会員向けセミナーのご提案</span>
+      <h1 class="maru">AIを「見る」から、<br>AIに「任せる」へ。
+        <span class="sub">自分の仕事をひとつ、AIに渡してみる2時間</span>
+      </h1>
+      <p class="to"><b>サイバーシルクロード八王子 御中</b><br>ご担当：小松 雄貴 様</p>
+    </div>
+    <img src="img/mascot_invite.webp" alt="そろばんを持ったAIのロボが両手を広げて歓迎している" width="170" height="170">
+  </header>
+
+  <div class="facts">
+    <div class="fact"><span>形式</span><b>対面・2時間<br>PC持参（スマホ可）</b></div>
+    <div class="fact"><span>対象</span><b>会員企業の経営者<br>・実務担当の方</b></div>
+    <div class="fact"><span>定員</span><b>15名<br>（御会の枠に合わせます）</b></div>
+    <div class="fact"><span>時期</span><b>2027年1月下旬〜2月<br>平日14:00〜16:00</b></div>
+  </div>
+
+  <!-- 1 未来 -->
+  <section>
+    <h2 class="maru">3か月後の、会員企業の朝</h2>
+    <div class="scene">
+      <p>朝9時。<br>パソコンを開くと、昨日届いた問い合わせメールが仕分けされ、返信の下書きが並んでいます。</p>
+      <p>先週の売上は表に入り、月次の報告文はもう書けています。<br>社長がやるのは、目を通して「これで出して」と言うことだけ。</p>
+      <p>特別な会社の話ではありません。<br>毎月くり返している事務を<span class="kv">ひとつずつAIに渡していった</span>会社の、ふつうの朝です。</p>
+    </div>
+  </section>
+
+  <!-- 2 問題 -->
+  <section>
+    <h2 class="maru">「体験」のあとに、必ず来る壁</h2>
+    <p>御会の11月19日「AI体験セミナー」のご案内を拝見しました。<br>3月に続いての開催とのこと、会員企業の皆さまの関心の高さを感じます。</p>
+    <p>資料を聴ける形にする、社内の問い合わせにAIが答える、文章から図を作る。<br>AIが「できること」を知る入口として、とてもよい内容だと思います。</p>
+    <div class="card">
+      <p class="q maru">「すごいのは分かった。<br>で、明日からうちの仕事は誰がやるの？」</p>
+      <p>体験のあと、会社に戻った方が必ずぶつかるのが、この問いです。<br>AIに質問はできるようになった。<br>けれど、毎月くり返す事務はまだ全部、人の手の中にある。</p>
+      <p>ここで止まってしまう会社が、とても多いのです。</p>
+    </div>
+  </section>
+
+  <!-- 3 原因 -->
+  <section>
+    <h2 class="maru">止まる理由は、AIの「種類」にあります</h2>
+    <p>いま多くの方が触れているAIは、チャットの画面で質問に答えてくれる「見るAI」です。<br>答えは出ますが、その先の作業は人がやります。</p>
+    <p>一方で、この1年で広がってきたのが、指示をするとパソコンの中で<span class="kv">実際に作業を進めてくれる「動くAI」</span>です。<br>ファイルを作る、表を更新する、決まった時間に下書きを並べる、までを済ませます。</p>
+    <p>fulfullが研修で使っているのは、この「動くAI」の代表格である<span class="kv">Claude Code（クロード コード）</span>です。<br>プログラマー向けの道具だと思われがちですが、話し言葉で指示ができ、事務の自動化にそのまま使えます。</p>
+
+    <figure>
+      <svg viewBox="0 0 860 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="見るAIと動くAIの違いの図解">
+        <defs>
+          <style>
+            .f{font-family:"Noto Sans JP","Hiragino Sans",sans-serif}
+            .h{font-size:22px;font-weight:800;fill:#0A5A62}
+            .b{font-size:16px;font-weight:700;fill:#1C3236}
+            .s{font-size:14px;font-weight:500;fill:#4A6468}
+            .w{fill:#fff;font-size:15px;font-weight:800}
+          </style>
+        </defs>
+        <!-- left: 見るAI -->
+        <rect x="10" y="10" width="400" height="340" rx="20" fill="#EEF6F7" stroke="#D5E4E6"/>
+        <text x="210" y="52" text-anchor="middle" class="f h">見るAI（チャット型）</text>
+        <rect x="40" y="80" width="340" height="52" rx="12" fill="#fff" stroke="#D5E4E6"/>
+        <text x="210" y="112" text-anchor="middle" class="f b">人：「議事録をまとめて」</text>
+        <path d="M210 132 v22" stroke="#0E7C86" stroke-width="3" fill="none"/>
+        <path d="M203 148 l7 10 l7 -10" fill="none" stroke="#0E7C86" stroke-width="3"/>
+        <rect x="40" y="160" width="340" height="52" rx="12" fill="#fff" stroke="#D5E4E6"/>
+        <text x="210" y="192" text-anchor="middle" class="f b">AI：文章で答えが出る</text>
+        <path d="M210 212 v22" stroke="#A87A1F" stroke-width="3" fill="none"/>
+        <path d="M203 228 l7 10 l7 -10" fill="none" stroke="#A87A1F" stroke-width="3"/>
+        <rect x="40" y="240" width="340" height="80" rx="12" fill="#FBF4E3" stroke="#D9A441"/>
+        <text x="210" y="272" text-anchor="middle" class="f b">そのあとは、人の作業</text>
+        <text x="210" y="300" text-anchor="middle" class="f s">コピーして・貼って・保存して・送る</text>
+
+        <!-- right: 動くAI -->
+        <rect x="450" y="10" width="400" height="340" rx="20" fill="#0A5A62"/>
+        <text x="650" y="52" text-anchor="middle" class="f h" fill="#fff" style="fill:#fff">動くAI（Claude Code）</text>
+        <rect x="480" y="80" width="340" height="52" rx="12" fill="#fff"/>
+        <text x="650" y="112" text-anchor="middle" class="f b">人：「毎朝9時に、昨日のメールを仕分けて」</text>
+        <path d="M650 132 v22" stroke="#D9A441" stroke-width="3" fill="none"/>
+        <path d="M643 148 l7 10 l7 -10" fill="none" stroke="#D9A441" stroke-width="3"/>
+        <rect x="480" y="160" width="340" height="52" rx="12" fill="#fff"/>
+        <text x="650" y="192" text-anchor="middle" class="f b">AI：パソコンの中で作業を進める</text>
+        <path d="M650 212 v22" stroke="#D9A441" stroke-width="3" fill="none"/>
+        <path d="M643 228 l7 10 l7 -10" fill="none" stroke="#D9A441" stroke-width="3"/>
+        <rect x="480" y="240" width="340" height="80" rx="12" fill="#D9A441"/>
+        <text x="650" y="272" text-anchor="middle" class="f w">翌朝、下書きが並んでいる</text>
+        <text x="650" y="300" text-anchor="middle" class="f w" style="font-weight:600;font-size:14px">人は、目を通して「出す」を決めるだけ</text>
+      </svg>
+      <figcaption>「答えが出る」で終わるか、「作業が終わっている」まで行くか。ここが体験の次の段階です。</figcaption>
+    </figure>
+  </section>
+
+  <!-- 4 解決：セミナーの中身 -->
+  <section>
+    <h2 class="maru">当日の中身（2時間）</h2>
+    <p>講義は最小限にして、<span class="kv">参加者ご自身の仕事</span>を題材に、その場でAIが動くところまでをお見せします。<br>御会のAI体験セミナーと同じ、2時間・PC持参の形です。</p>
+
+    <ul class="tl">
+      <li><span class="t">0:00</span><div><b>実物の公開（15分）</b><p>講師の会社で、毎朝AIが済ませている仕事を画面でそのままお見せします。<br>報告書・案内文・資料づくり・SNS投稿。どれも日々の実物です。</p></div></li>
+      <li><span class="t">0:15</span><div><b>「見るAI」と「動くAI」の違い（15分）</b><p>Claude Codeとは何か、何ができて何ができないかを、専門用語なしで3つにまとめます。</p></div></li>
+      <li><span class="t">0:30</span><div><b>その場で動かす（30分）</b><p>参加者から「毎月くり返している仕事」を2〜3件挙げていただき、講師の画面でClaude Codeに渡します。<br>表の集計から報告文まで、問い合わせメールの返信下書きまで、動くところを見ていただきます。</p></div></li>
+      <li><span class="t">1:00</span><div><b>自分の仕事で、手を動かす（35分）</b><p>お手元のPCで「最初にAIに渡す仕事」を1つ選び、AIへの指示書を1枚書いていただきます（型はこちらで配布）。<br>書けた方の指示書は、その場で講師の画面で実際に動かします。</p></div></li>
+      <li><span class="t">1:35</span><div><b>使える制度の話（10分）</b><p>東京都のDXリスキリング助成金と、国の人材開発支援助成金の要点を、中立にご紹介します。<br>制度の紹介までで、申請のご相談は社会保険労務士・労働局をご案内します。</p></div></li>
+      <li><span class="t">1:45</span><div><b>質疑（15分）</b><p>「うちのこの仕事は渡せるか」を、個別にお答えします。</p></div></li>
+    </ul>
+
+    <div class="card">
+      <h3>参加された方が持ち帰るもの</h3>
+      <ul class="gets">
+        <li>自社で「最初にAIに渡す仕事」が1つ決まり、その指示書が手元に残る</li>
+        <li>「見るAI」と「動くAI」の違いが分かり、社内で説明できるようになる</li>
+        <li>当日動かした自動化の手順と、始め方の記事（講師のサイトで公開中）</li>
+      </ul>
+      <p class="out">持ち帰り：自社用の「AIに渡す指示書」1枚＋助成金の要点1枚</p>
+    </div>
+
+    <p class="note" style="margin-top:14px">AIのアカウントは不要です。体験は指示書づくりが中心で、実際に動かすのは講師の画面で行います。すでにClaudeをお使いの方は、ご自身のPCでも試していただけます。</p>
+  </section>
+
+  <!-- 5 御会にとって -->
+  <section>
+    <h2 class="maru">御会にお願いしたいこと・こちらで用意すること</h2>
+    <div class="two">
+      <div class="card">
+        <h3>御会にお願いしたいこと</h3>
+        <dl class="spec">
+          <dt>会場</dt><dd>御会の会議室、または東京たま未来メッセの会議室。プロジェクターとWi-Fiをお借りできれば十分です</dd>
+          <dt>告知</dt><dd>会員メール1〜2回（11月19日の会と同じ形）</dd>
+          <dt>受付</dt><dd>申込フォームは御会の形式に合わせます。こちらで用意も可能です</dd>
+          <dt>講師料</dt><dd>御会の規定に準じます。無償でも構いません</dd>
+        </dl>
+      </div>
+      <div class="card">
+        <h3>こちらで用意すること</h3>
+        <dl class="spec">
+          <dt>告知文</dt><dd>短い版・長い版・チラシのたたき台（御会のレイアウトに流し込める文章で）</dd>
+          <dt>当日資料</dt><dd>スライド・配布用の指示書の型・助成金の要点1枚</dd>
+          <dt>実演の題材</dt><dd>申込時に「毎月くり返している仕事」を1行書いていただき、当日までに準備します</dd>
+          <dt>事後</dt><dd>参加者向けに、当日の手順ページをお渡しします（御会からも転送できます）</dd>
+        </dl>
+      </div>
+    </div>
+    <p class="note" style="margin-top:14px">時期は2027年1月下旬〜2月を考えていますが、御会のご都合を優先します。11月19日の会の「続編」として告知いただけると、参加者にも流れが伝わりやすいと思います。</p>
+  </section>
+
+  <!-- 6 なぜいま -->
+  <section>
+    <h2 class="maru">なぜ、いまこの内容なのか</h2>
+    <div class="card">
+      <h3>国の助成金が「体験型」を外し、「仕事に直結する実装」に寄りました</h3>
+      <p>人材開発支援助成金は2026年8月の改正で、汎用的なAIリテラシー研修が対象外になりました。<br>対象として示されたのは「提案書の構成案作成・文章生成・修正方法を学ぶ、営業担当者向けの訓練」のような、職務に直接つながる内容です。</p>
+      <p>つまり会員企業が次に求めるのは、AIの一般論ではなく<span class="kv">自社の仕事をAIに渡す具体的な型</span>です。<br>本セミナーは、その入口になります。</p>
+    </div>
+    <div class="card">
+      <h3>期限のある制度が2つ、年度内にあります</h3>
+      <p>東京都のDXリスキリング助成金（経費の3/4・受付は2027年2月28日まで）と、国の事業展開等リスキリング支援コース（経費の75%・令和8年度が最終年度とされています）。<br>1〜2月の開催なら、年度内に動きたい会社にとって間に合う時期です。</p>
+      <p class="note">制度の内容は開催時点の最新情報で更新します。支給を保証する表現は使いません。</p>
+    </div>
+  </section>
+
+  <!-- 7 実績 -->
+  <section>
+    <h2 class="maru">いま、同じ型で動いているもの</h2>
+    <div class="stats">
+      <div class="stat"><p class="big maru">25<small> 社</small></p><p>企業研修のご依頼</p></div>
+      <div class="stat"><p class="big maru">200<small> 回超</small></p><p>セミナー・研修の登壇</p></div>
+      <div class="stat"><p class="big maru">2,000<small> 件</small></p><p>お金と経営の個別相談</p></div>
+    </div>
+    <ul class="now">
+      <li><b>11月17日 緑法人会</b>：経営者向けAI実践セミナー「その事務仕事、年間いくら？」（定員50名・一般参加可）</li>
+      <li><b>12月 足柄上商工会</b>：経営者向け勉強会 全3回（東京海上日動と）</li>
+      <li><b>八王子商工会議所</b>：ビジネスお助け隊 役員・リーダー育成塾 講師・特定創業支援 担当</li>
+      <li><b>サイバーシルクロード八王子</b>：本気の創業塾 第22期 講師・ブラッシュアップコース 個別伴走</li>
+      <li><b>自社</b>：月約4万円のAI利用料で、1年間に記事122本・Webサイト8本・自動化の仕組み6本。当日お見せするのは、すべてこの実物です</li>
+    </ul>
+    <p class="note" style="margin-top:12px">法人会・商工会からのご依頼が続いています。登壇・研修の実績であり、各団体が本セミナーを推奨するものではありません。実績はfulfull自社集計（2026年10月）。</p>
+  </section>
+
+  <!-- 8 その先 -->
+  <section>
+    <h2 class="maru">その先を希望する会員企業には</h2>
+    <p>セミナーの中で売り込みはしません。<br>「自社でもやりたい」と希望された会社にだけ、後日こちらをご案内します。</p>
+    <div class="flow">
+      <div class="step"><span class="k">無料</span><h3>人件費の換算診断（30〜45分）</h3><p>毎月くり返す仕事を挙げていただき、年間いくら分がAIに渡せるかを数字にします。診断だけで終わって構いません。</p></div>
+      <div class="step"><span class="k">研修</span><h3>選抜チーム研修（計12時間）</h3><p>社長が選んだ社員2〜4名を対象に、3時間×4回。その会社の実際の仕事を教材に、Claude Codeで動くところまで一緒に作ります。</p></div>
+      <div class="step"><span class="k">定着</span><h3>研修後の顧問</h3><p>月1回の定着ミーティングと質問対応。受講者が社内の「聞ける人」になるまで伴走します。</p></div>
+    </div>
+    <p class="note" style="margin-top:12px">内容と費用は、fulfullのサイトで公開しています。<br><a href="https://fulfull.jp/ai-training/" target="_blank" rel="noopener">https://fulfull.jp/ai-training/</a></p>
+  </section>
+
+  <!-- 9 約束 -->
+  <section>
+    <h2 class="maru">御会と参加者の皆さまへのお約束</h2>
+    <ul class="promise">
+      <li>セミナーの中で、自社サービスの販売・勧誘はしません</li>
+      <li>保険・金融商品の話は一切しません。AIによる業務の自動化に限定します</li>
+      <li>効果を保証する表現は使わず、数字は控えめな実例で示します</li>
+      <li>助成金は制度の紹介まで。申請は社会保険労務士・労働局をご案内します</li>
+      <li>参加企業の仕事の内容は持ち帰りません。指示書はご本人の手元に残ります</li>
+      <li>内容は御会のご意向を優先して調整します</li>
+    </ul>
+  </section>
+
+  <!-- 10 講師 -->
+  <section>
+    <h2 class="maru">講師</h2>
+    <div class="who">
+      <div>
+        <p class="nm maru">森川 満章</p>
+        <p class="rb">もりかわ みちあき｜fulfull株式会社 代表取締役</p>
+        <p>1986年 岩手県出身、横浜在住。<br>30歳までヤマト運輸のドライバー。投資を教える側になり、お金と経営の相談を2,000件、セミナー・研修の登壇を200回重ねてきました。</p>
+        <p>いまは自社をAIで運営する実践者です。<br>会社の事務の多くをClaude Codeに渡し、空いた時間を相談と登壇に使っています。<br>当日お見せするのは、その日の朝も動いている実物です。</p>
+        <p>八王子商工会議所 ビジネスお助け隊 役員。御会の「本気の創業塾」では第22期の講師と、ブラッシュアップコースの個別伴走を担当しています。<br>音声メディアVoicy「ふるふるラジオ」配信中。</p>
+      </div>
+      <img src="img/toudan.jpg" alt="ホワイトボードの前で説明する森川満章" width="600" height="360" loading="lazy">
+    </div>
+  </section>
+
+  <!-- 11 進め方 -->
+  <section>
+    <h2 class="maru">ここからの進め方</h2>
+    <div class="flow">
+      <div class="step"><span class="k">1</span><h3>まず、お話を</h3><p>11月19日の会場で少しお話しできれば十分です。先に15分ほどZoomでも結構です。</p></div>
+      <div class="step"><span class="k">2</span><h3>日程と枠を決める</h3><p>2027年1月下旬〜2月の平日午後で候補をいただき、会場と定員を合わせます。</p></div>
+      <div class="step"><span class="k">3</span><h3>告知文をお渡し</h3><p>開催の5週間前を目安に、告知文とチラシのたたき台をお渡しします。</p></div>
+    </div>
+
+    <div class="complete">
+      <img src="img/mascot_base.webp" alt="そろばんを持ったAIのロボが片手を上げて挨拶している" width="96" height="96">
+      <div>
+        <b>会員企業の皆さまに、「体験」の次の一歩を。</b>
+        <p>御会のAI体験セミナーで開いた扉の先を、一緒に用意できればうれしく思います。</p>
+      </div>
+    </div>
+
+    <div class="contact">
+      <p><b>ご連絡先</b></p>
+      <p>fulfull株式会社 森川 満章</p>
+      <p class="url">メール：fulfull0605@gmail.com</p>
+      <p class="note">創業塾でご連絡いただいているアドレスと同じです。返信は、このメールへのご返信で結構です。</p>
+    </div>
+  </section>
+
+  <footer>
+    fulfull株式会社（神奈川県横浜市・2020年創業）。本資料の実績は自社集計です。助成金の内容は2026年10月時点の公表情報にもとづき、支給を保証するものではありません。<br>
+    Claude Codeは Anthropic社の製品名です。fulfullは特定の製品を販売していません。
+  </footer>
+</div>
+</body>
+</html>
