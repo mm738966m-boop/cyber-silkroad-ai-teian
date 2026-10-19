@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>サイバーシルクロード 攻め方</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="description" content="サイバーシルクロード八王子（小松さん）へ fulfullのAI研修を売り込む戦略・3案と推し・資料の構成・メール文・森川さんの確認事項（2026-10-19）">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@700;900&family=Noto+Sans+JP:wght@500;700;800&display=swap">
+<style>
+  :root{color-scheme:light dark;
+    --teal:#0E7C86;--deep:#0A5A62;--ink:#1C3236;--ink2:#4A6468;--soft:#EEF6F7;--line:#D5E4E6;
+    --gold:#A87A1F;--goldfill:#D9A441;--goldbg:#FBF4E3;--bg:#fff;--card:#fff;--ok:#1E7D5A;--okbg:#EAF6F0;--ng:#B23A3A;--ngbg:#FBEAEA}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --teal:#5FC0C8;--deep:#9BDDE2;--ink:#E8EFEF;--ink2:#A9BDC0;--soft:#152224;--line:#2A3B3E;
+    --gold:#D9B35C;--goldfill:#D9A441;--goldbg:#332A15;--bg:#0F1A1C;--card:#152224;--ok:#7FD3A8;--okbg:#163327;--ng:#F09A9A;--ngbg:#3A1E1E}}
+  :root[data-theme="dark"]{
+    --teal:#5FC0C8;--deep:#9BDDE2;--ink:#E8EFEF;--ink2:#A9BDC0;--soft:#152224;--line:#2A3B3E;
+    --gold:#D9B35C;--goldfill:#D9A441;--goldbg:#332A15;--bg:#0F1A1C;--card:#152224;--ok:#7FD3A8;--okbg:#163327;--ng:#F09A9A;--ngbg:#3A1E1E}
+  *{box-sizing:border-box;min-width:0}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP","Hiragino Sans",sans-serif;font-size:18px;font-weight:500;line-height:1.9;text-wrap:pretty;word-break:auto-phrase}
+  .wrap{max-width:860px;margin:0 auto;padding:0 20px 80px}
+  p{margin:0 0 .9em}
+  a{color:var(--teal);text-underline-offset:3px}
+  .maru{font-family:"Zen Maru Gothic","Noto Sans JP",sans-serif;font-weight:900}
+  .kv{color:var(--deep);font-weight:800}
+  .note{font-size:14.5px;color:var(--ink2);line-height:1.8}
+  header{padding:40px 0 10px;display:grid;grid-template-columns:1fr 140px;gap:18px;align-items:center}
+  header img{width:140px;justify-self:end}
+  .eyebrow{display:inline-block;background:var(--soft);color:var(--deep);border:1px solid var(--line);border-radius:999px;padding:4px 14px;font-size:14px;font-weight:700;margin-bottom:12px}
+  h1{font-size:clamp(27px,6.5vw,38px);line-height:1.35;margin:0 0 10px;color:var(--deep)}
+  @media (max-width:520px){header{grid-template-columns:1fr}header img{width:110px;justify-self:center;order:-1}}
+  section{margin-top:52px}
+  h2{font-size:clamp(22px,6vw,28px);line-height:1.45;margin:0 0 14px;color:var(--deep);padding-left:14px;border-left:6px solid var(--goldfill)}
+  h3{font-size:19px;font-weight:800;margin:0 0 6px;color:var(--deep);line-height:1.5}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 22px;margin-top:12px}
+  .card p:last-child{margin-bottom:0}
+  .soft{background:var(--soft);border-radius:18px;padding:20px 22px;border:1px solid var(--line)}
+  .soft p:last-child{margin-bottom:0}
+  .gold{background:var(--goldbg);border:1.5px solid var(--goldfill);border-radius:18px;padding:20px 22px;margin-top:12px}
+  .gold p:last-child{margin-bottom:0}
+  ul,ol{margin:6px 0 10px;padding-left:1.3em}
+  li{margin:4px 0}
+  .plan{border:2px solid var(--line);border-radius:18px;padding:18px 20px;margin-top:12px;background:var(--card)}
+  .plan.rec{border-color:var(--teal);box-shadow:0 6px 18px rgba(14,124,134,.12)}
+  .plan .tag{display:inline-block;font-size:13.5px;font-weight:800;border-radius:999px;padding:2px 12px;margin-bottom:8px;background:var(--soft);color:var(--deep)}
+  .plan.rec .tag{background:var(--teal);color:#fff}
+  .pm{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+  .pm div{border-radius:12px;padding:10px 14px;font-size:16px}
+  .pm .p{background:var(--okbg)} .pm .m{background:var(--ngbg)}
+  .pm b{display:block;font-size:14px;margin-bottom:2px}
+  .pm .p b{color:var(--ok)} .pm .m b{color:var(--ng)}
+  @media (max-width:560px){.pm{grid-template-columns:1fr}}
+  table{width:100%;border-collapse:collapse;font-size:16px;margin-top:10px}
+  th,td{border-bottom:1px solid var(--line);padding:10px 8px;text-align:left;vertical-align:top}
+  th{color:var(--ink2);font-size:14px;font-weight:700;background:var(--soft)}
+  td b{color:var(--deep)}
+  .tl{list-style:none;padding:0;margin:10px 0 0;display:grid;gap:8px}
+  .tl li{display:grid;grid-template-columns:120px 1fr;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:16.5px}
+  .tl .d{font-weight:800;color:var(--gold)}
+  @media (max-width:480px){.tl li{grid-template-columns:1fr;gap:2px}}
+  pre.mail{white-space:pre-wrap;font-family:inherit;font-size:16.5px;line-height:1.85;background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:10px 0 0}
+  .ask{list-style:none;padding:0;margin:10px 0 0;display:grid;gap:8px}
+  .ask li{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--goldfill);border-radius:12px;padding:12px 16px}
+  .ask li b{display:block;color:var(--deep)}
+  .btn{display:inline-block;background:var(--teal);color:#fff;font-weight:800;border-radius:12px;padding:12px 18px;text-decoration:none;margin-top:8px}
+  figure{margin:16px 0 0}figure svg{width:100%;height:auto}figcaption{font-size:14px;color:var(--ink2);text-align:center;margin-top:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div>
+    <span class="eyebrow">森川さん用の作戦メモ｜2026年10月19日</span>
+    <h1 class="maru">サイバーシルクロード八王子に、<br>AI研修をどう持ち込むか</h1>
+    <p class="note">小松さん宛ての提案資料とメール文は別に作りました。ここは「なぜそう組んだか」と、森川さんに決めてほしいことの一覧です。</p>
+  </div>
+  <img src="../img/mascot_think.webp" alt="考えているAIのロボ" width="140" height="140">
+</header>
+
+<section>
+  <h2 class="maru">まず結論</h2>
+  <div class="gold">
+    <p class="kv">小松さんには「研修を売らせて」ではなく、「11/19の続編を、会員向けにやらせて」と言う。</p>
+    <p>Googleのセミナーと競わず、その次の段階（AIに仕事を渡す実装）を2時間・15名・PC持参の同じ型で引き受ける。<br>セミナーの中では売らず、持ち帰りの指示書と後日の無料診断で、研修に進みたい会社だけが手を挙げる形にする。</p>
+    <p>送るのは今週。<br>11/19の案内が届いた「その日」に反応するのが一番自然で、森川さん自身も11/19に参加申込をして、会場で小松さんと立ち話をする。</p>
+  </div>
+</section>
+
+<section>
+  <h2 class="maru">届いたメールから読めること</h2>
+  <div class="card">
+    <ul>
+      <li><b>AIセミナーの「枠」がすでにある。</b>3/17に1回目、11/19に2回目。年2回ペースで、講師はDX学校八王子校（アイテレコム・伊藤拓人さん）。DX学校は株式会社ディグナのフランチャイズで、全国の「IT導入診断士」が各地で分校を名乗る仕組み。</li>
+      <li><b>中身は「見るAI」の段階。</b>Gemini Notebook（旧NotebookLM）で資料を聴く・FAQ・図解。個人の情報整理が主で、「業務が自動で進む」ところまでは扱わない。ここが空いている。</li>
+      <li><b>形は2時間・15名・PC持参・たま未来メッセ・無料（記載なし）。</b>fulfullの提案も同じ形にすれば、小松さんは「同じ段取りでもう1回」で済む。</li>
+      <li><b>告知は開催の約5週間前。</b>3/17の案内は2/3、11/19の案内は10/14。1月下旬〜2月開催なら、12月中旬までに日程が決まっていればよい。</li>
+      <li><b>同じ日にもう1通、お助け隊人材開発分科会のセミナー案内（11/6・茶道とメンタルヘルス）が会員に流れている。</b>お助け隊AD主催の会も会員メールに載る前例＝「お助け隊役員の森川」の肩書は小松さんの社内説明に効く。</li>
+    </ul>
+  </div>
+  <div class="soft" style="margin-top:12px">
+    <p><b>小松さんとの関係（記憶から）：</b>創業塾22期の窓口。細かい打合せをせず講師に任せる方針で、森川さんはそれで問題なく回している。連絡はfulfull0605宛て。<br>→ 提案は「全部こちらで用意します・決めてもらうのは日程と会場だけ」の形が、小松さんの仕事の仕方に合う。</p>
+  </div>
+</section>
+
+<section>
+  <h2 class="maru">3つの持ち込み方と、推し</h2>
+
+  <div class="plan rec">
+    <span class="tag">推し＝案A</span>
+    <h3>「11/19の続編」を会員向けセミナーとして引き受ける</h3>
+    <p>サイバーシルクロード八王子 主催・会員向け・無料・2時間・15名・PC持参。講師＝fulfull 森川。<br>題名の軸「AIを見るから、AIに任せるへ」。参加者の仕事を題材にClaude Codeをその場で動かし、持ち帰りは「最初にAIに渡す仕事の指示書」1枚。<br>セミナー内は売らない。希望者だけ後日の無料換算診断→研修。</p>
+    <div class="pm">
+      <div class="p"><b>いい点</b>小松さんの段取りが変わらない。DX学校と競わない（順番が違う）。緑法人会11/17の型をそのまま使えるので準備が軽い。会員企業15社と直接つながれる。</div>
+      <div class="m"><b>弱い点</b>1回あたりの接点は15名。研修に進むのは1〜2社の見込み。講師料はほぼ無償前提。</div>
+    </div>
+  </div>
+
+  <div class="plan">
+    <span class="tag">案B</span>
+    <h3>fulfullのAI研修を「会員向けの案内」として配信してもらう</h3>
+    <p>研修の紹介文と料金を会員メールで流してもらう直球。</p>
+    <div class="pm">
+      <div class="p"><b>いい点</b>一度に会員全体に届く。</div>
+      <div class="m"><b>弱い点</b>商工会議所系は「特定の会社の商品を会員に推す」形を嫌う（足柄上で見た「特定企業への肩入れと見られない配慮」と同じ）。小松さん個人の裁量を超え、通りにくい。通っても営業メール扱いで読まれない。</div>
+    </div>
+  </div>
+
+  <div class="plan">
+    <span class="tag">案C</span>
+    <h3>DX学校（伊藤さん）と連続講座にする</h3>
+    <p>「Googleで整理→Claude Codeで実行」の2回セット。</p>
+    <div class="pm">
+      <div class="p"><b>いい点</b>流れがきれい。相手の顔も立つ。</div>
+      <div class="m"><b>弱い点</b>相手の都合に左右され、調整が重い。fulfullの色が薄まる。いまは相手の意向が分からない。</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <p><b>組み合わせ：</b>案Aで入り、資料の「その先」の章に研修の案内（fulfull.jp/ai-training へのリンク）を置く＝案Bの中身は資料に残す。<br>小松さんや伊藤さんから「一緒に」の話が出たら案Cに乗る。こちらからは持ち出さない。</p>
+  </div>
+</section>
+
+<section>
+  <h2 class="maru">気をつけたこと（政治と法律）</h2>
+  <ul>
+    <li><b>DX学校を下げない。</b>資料では11/19の内容を「入口としてとてもよい」と書き、「その次」と位置づけた。競合ではなく順番。</li>
+    <li><b>お助け隊の派遣枠では自社商品を出せない。</b>今回はサイバーシルクロード主催のセミナーに「fulfullの森川」が講師で立つ形（DX学校と同じ立ち位置）。お助け隊の名義は使わない。肩書として「お助け隊 役員」は書いた。</li>
+    <li><b>セミナー内で売らない・保険の話をしない・効果を保証しない・助成金は紹介まで。</b>緑法人会の企画書と同じ「お約束」を章にした。</li>
+    <li><b>料金は資料に書かない。</b>法人会のときの森川さん判断（商売っ気でなく貢献）に揃え、料金は公開済みの fulfull.jp/ai-training へのリンクだけ。</li>
+    <li><b>助成金は「体験型は対象外になった」を武器にしつつ、「75%」を見出しにしない。</b>8月改正の趣旨（助成金目当て研修の締め出し）に逆らわない書き方。</li>
+    <li><b>Claude Codeの体験設計：</b>2時間でClaude Codeを15人のPCに入れるのは無理がある（有料プラン・環境構築）。参加者は「AIに渡す指示書」を書き、動かすのは講師の画面。アカウント不要と明記して、Googleのセミナーより参加の壁を下げた。</li>
+    <li><b>電話番号は載せない。</b>連絡先は創業塾で使っているfulfull0605のメールだけ。</li>
+  </ul>
+</section>
+
+<section>
+  <h2 class="maru">資料の組み立て（なぜこの順か）</h2>
+  <table>
+    <tr><th>章</th><th>役割</th></tr>
+    <tr><td><b>3か月後の朝</b></td><td>未来から入る。小松さんが上に回すとき「会員企業がこうなる」が先に見える</td></tr>
+    <tr><td><b>体験のあとに来る壁</b></td><td>11/19への敬意＋「で、明日から誰がやるの？」で問題を立てる</td></tr>
+    <tr><td><b>止まる理由はAIの種類</b></td><td>見るAI／動くAIの図解。Claude Codeを専門用語なしで出す場所</td></tr>
+    <tr><td><b>当日の中身（2時間）</b></td><td>時間割＋持ち帰り。Googleの会と同じ形だと分かるように</td></tr>
+    <tr><td><b>御会にお願い／こちらで用意</b></td><td>小松さんの手間がゼロに近いことを表で</td></tr>
+    <tr><td><b>なぜいま</b></td><td>8月改正と、都DX（2/28まで）・国（令和8年度最終）の期限。中立に</td></tr>
+    <tr><td><b>いま動いているもの</b></td><td>25社・200回・2,000件＋緑法人会11/17・足柄上12月・八王子商工会議所・創業塾の実績</td></tr>
+    <tr><td><b>その先</b></td><td>無料診断→研修→顧問。料金はリンク先</td></tr>
+    <tr><td><b>お約束／講師／進め方</b></td><td>法人会企画書と同じ型。進め方は「11/19の会場で立ち話」が第一候補</td></tr>
+  </table>
+  <p style="margin-top:12px"><a class="btn" href="https://mm738966m-boop.github.io/cyber-silkroad-ai-teian/" target="_blank" rel="noopener">提案資料（小松さん宛て）を開く</a></p>
+</section>
+
+<section>
+  <h2 class="maru">送るメール（fulfull0605から）</h2>
+  <p class="note">件名：AI体験セミナーの「続編」のご提案（fulfull 森川）／宛先：komatsu@hachioji.or.jp</p>
+<pre class="mail">サイバーシルクロード八王子
+小松 雄貴 様
+
+お世話になっております。
+創業塾でお世話になっております、fulfullの森川です。
+
+本日、11月19日のAI体験セミナーのご案内を拝見しました。
+3月に続いての開催とのこと、会員の皆さまの関心の高さを感じます。
+私も当日、参加を申し込みます。
+
+そのうえで、ひとつご提案があります。
+
+体験の次の段階として、「自分の仕事をひとつ、AIに任せてみる」2時間のセミナーを、会員の皆さま向けに開かせていただけないでしょうか。
+
+Googleのセミナーが「資料を整理する・答えてもらう」段階だとすると、こちらは「毎月くり返している事務を、AIが実際に進める」ところまでを、参加者の仕事を題材にその場で動かして見せる内容です。
+使うのは、話し言葉で指示できる「動くAI」のClaude Codeです。
+
+同じ型の経営者向けの会を、11月17日に緑法人会（定員50名）で行います。
+八王子の会員企業の皆さまにも、同じものをお届けできればと思っています。
+
+内容・進め方・御会にお願いしたいことを、1枚にまとめました。
+
+https://mm738966m-boop.github.io/cyber-silkroad-ai-teian/
+
+時期は2027年1月下旬から2月、11月19日と同じ平日14時から16時の枠を考えていますが、御会のご都合を優先します。
+講師料は御会の規定に準じます。
+告知文・チラシのたたき台・当日資料は、こちらで用意します。
+
+11月19日の会場で少しお話しできれば十分です。
+先に15分ほどZoomでも結構です。
+
+ご検討のほど、よろしくお願いいたします。
+
+fulfull株式会社
+森川 満章</pre>
+</section>
+
+<section>
+  <h2 class="maru">段取り</h2>
+  <ul class="tl">
+    <li><span class="d">今週中</span><span>森川さんが資料をOK→メール送信（fulfull0605）。同時に11/19の申込フォームから参加申込</span></li>
+    <li><span class="d">11/19（木）</span><span>たま未来メッセで参加。伊藤さんの会のレベル感を見る。小松さんと会場で立ち話→日程の感触</span></li>
+    <li><span class="d">12月中旬まで</span><span>日程・会場・定員を確定（告知5週間前の逆算）。緑法人会11/17の持ち帰りシートと反応を、告知文に反映</span></li>
+    <li><span class="d">12月下旬</span><span>告知文（短・長）・チラシたたき台・申込フォーム文を小松さんへ</span></li>
+    <li><span class="d">1月下旬〜2月</span><span>開催。申込時の「毎月くり返す仕事」1行から実演題材を準備。終了後に手順ページと無料診断の案内（希望者のみ）</span></li>
+  </ul>
+</section>
+
+<section>
+  <h2 class="maru">森川さんに決めてほしいこと</h2>
+  <ul class="ask">
+    <li><b>① 「他の商工会議所からの引き合い」の中身</b>記憶と手元に具体名がなく、資料には「法人会・商工会からのご依頼が続いています」＋緑法人会11/17・足柄上12月・八王子商工会議所の実績だけを書きました。具体の商工会議所名があれば1行足します。</li>
+    <li><b>② 講師料</b>資料は「御会の規定に準じます。無償でも構いません」。メールは「規定に準じます」まで。無償を書きたくなければ資料の一文を消します。</li>
+    <li><b>③ 時期</b>2027年1月下旬〜2月・平日14〜16時で書きました。年内にしたい、3月でいい、などあれば変えます。</li>
+    <li><b>④ 11/19への参加</b>メールに「私も申し込みます」と書きました。行かないなら、この一文と段取りを外します。</li>
+    <li><b>⑤ 体験パートの設計</b>「参加者は指示書を書く・動かすのは講師の画面・アカウント不要」にしました。参加者のPCで実際にClaude Codeを動かしたい場合は、事前の環境準備（有料プラン・インストール）が要るので、形を変えます。</li>
+  </ul>
+</section>
+
+<section>
+  <h2 class="maru">調べたこと・反映したこと</h2>
+  <ul class="note" style="font-size:15.5px">
+    <li>サイバーシルクロード八王子のサイト（組織の性格・事業・最近のセミナー一覧）→「IT相談・デジタル出張相談・AIセミナー年2回」を読み取り、同じ型で提案</li>
+    <li>11/19セミナーの案内ページ（Googleフォーム申込・PDFチラシ・3/17の前回・DX学校八王子校）→「続編」の位置づけと告知5週間前の逆算</li>
+    <li>DX学校の仕組み（ディグナのFC・IT導入診断士）→競合視せず「順番が違う」と整理。八王子校・伊藤さん個人の情報は検索で見つからず</li>
+    <li>Gmail（mm738966m）に届いたサイバー情報の配信一覧→お助け隊AD主催の会も会員メールに載る前例を確認</li>
+    <li>記憶：創業塾22期の窓口・小松さんの仕事の仕方・fulfull0605での連絡／緑法人会企画書とチラシ文／法人LP導入資料の研修の中身／助成金の調査（都DX 3/4・2/28まで、国75%・令和8年度最終、8月改正の対象例）／「料金は法人会資料に出さない」「電話番号を載せない」「いつもの緑系デザイン」のルール</li>
+    <li>fulfull.jp/ai-training の公開情報（12時間・2〜4名・25社・200回）。公開ページにClaude Codeの記述はまだ無い→今回の資料が初出</li>
+  </ul>
+</section>
+
+<p class="note" style="margin-top:40px">正本：~/Desktop/サイバーシルクロード八王子_AIセミナー提案/（index.html＝提案資料・senryaku/＝この作戦メモ・メール文_小松さん宛.txt）。提案資料は同フォルダで直して git push すれば同じURLで反映。</p>
+</div>
+</body>
+</html>
