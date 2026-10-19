@@ -76,6 +76,9 @@
   .gain b{display:block;font-size:18px;color:var(--deep);font-weight:800;line-height:1.5;margin-bottom:4px}
   .gain p{margin:0;font-size:16px;color:var(--ink2)}
   @media (max-width:640px){.gains{grid-template-columns:1fr}}
+  figure.movie .mv{position:relative}
+  .snd{position:absolute;right:14px;top:14px;background:#06C755;color:#fff;border:0;border-radius:999px;padding:9px 16px;font:800 15px/1 "Noto Sans JP",sans-serif;box-shadow:0 4px 12px rgba(0,0,0,.2);cursor:pointer}
+  .snd[hidden]{display:none}
   figure.chirashi{margin:18px auto 0;max-width:380px}
   figure.chirashi img{width:100%;border:1px solid var(--line);border-radius:12px;box-shadow:0 6px 18px rgba(14,124,134,.12)}
 
@@ -192,8 +195,8 @@
       <p>特別な会社の話ではありません。<br>毎月くり返している事務を<span class="kv">ひとつずつAIに渡していった</span>会社の、ふつうの朝です。</p>
     </div>
     <figure class="movie">
-      <video src="img/asa30.mp4" poster="img/asa30_poster.jpg" autoplay muted loop playsinline controls preload="metadata" width="1280" height="720"></video>
-      <figcaption>講師の会社の、今朝（10月19日・月曜）の実物です。<br>5時37分から7時30分まで、人は何もしていません。（30秒・音なし）</figcaption>
+      <div class="mv"><video id="asa" src="img/asa30_bgm.mp4" poster="img/asa30_poster.jpg" autoplay muted loop playsinline controls preload="metadata" width="1280" height="720"></video><button type="button" class="snd" id="snd">🔊 音楽つきで見る</button></div>
+      <figcaption>講師の会社の、今朝（10月19日・月曜）の実物です。<br>5時37分から7時30分まで、人は何もしていません。（30秒・音楽つき）</figcaption>
     </figure>
   </section>
 
@@ -431,5 +434,10 @@
     Claude Codeは Anthropic社の製品名です。fulfullは特定の製品を販売していません。
   </footer>
 </div>
+<script>
+(function(){var v=document.getElementById('asa'),b=document.getElementById('snd');if(!v||!b)return;
+b.addEventListener('click',function(){v.muted=false;v.currentTime=0;v.volume=1;var p=v.play();if(p&&p.catch)p.catch(function(){});b.hidden=true;});
+v.addEventListener('volumechange',function(){if(!v.muted)b.hidden=true;});})();
+</script>
 </body>
 </html>
