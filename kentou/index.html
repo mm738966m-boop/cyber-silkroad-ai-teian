@@ -6,9 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <meta name="color-scheme" content="light">
-<meta name="description" content="サイバーシルクロード八王子 会員向け「AI定着セミナー」実施のご検討資料。特定の事業者に偏らない運営の形をまとめました。">
+<meta name="description" content="サイバーシルクロード八王子 会員向け「AIで事務を自動で回す」セミナー実施のご検討資料。特定の事業者に偏らない運営の形をまとめました。">
 <meta property="og:title" content="会員企業を、人が辞めても仕事が止まらない会社へ｜会員向けAI定着セミナー ご検討資料">
-<meta property="og:description" content="会員企業の人手不足に、AIで「誰がやっても回る仕組み」を。特定の事業者に偏らない運営の形をまとめました。">
+<meta property="og:description" content="AIに聞いて終わりではなく、毎月の事務をAIに任せて自動で回すところまで。特定の事業者に偏らない運営の形をまとめました。">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://mm738966m-boop.github.io/cyber-silkroad-ai-teian/kentou/img/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -168,6 +168,28 @@
   .end .note{color:#D3D9E6}
   footer{font-size:14px;color:var(--mute);text-align:center;line-height:1.8}
 
+
+  /* 自動化の3段 */
+  .ladder{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;align-items:end;margin:0;padding:0;list-style:none}
+  .ladder li{border-radius:18px;padding:16px 16px 18px;display:grid;gap:6px;align-content:start;background:var(--panel);position:relative}
+  .ladder li:nth-child(1){min-height:190px}
+  .ladder li:nth-child(2){min-height:220px}
+  .ladder li.go{min-height:262px;background:var(--grad);color:#F2F3F6;box-shadow:0 10px 26px rgba(22,36,74,.22)}
+  .ladder .st{font-feature-settings:"lnum" 1;font-family:var(--latin);font-size:14px;letter-spacing:.22em;font-weight:600;color:var(--mute)}
+  .ladder li.go .st{color:#E6C989}
+  .ladder b{font-family:var(--serif);font-size:20px;line-height:1.45;letter-spacing:.03em}
+  .ladder p{font-size:15.5px;line-height:1.7;color:var(--ink2)}
+  .ladder li.go p{color:#E4E8F0}
+  .ladder .tag{justify-self:start;font-size:13.5px;font-weight:700;border-radius:999px;padding:1px 10px;background:var(--card);color:var(--mute)}
+  .ladder li.go .tag{background:#E6C989;color:#16244A}
+  @media (max-width:640px){.ladder{grid-template-columns:1fr}.ladder li,.ladder li:nth-child(1),.ladder li:nth-child(2),.ladder li.go{min-height:0}}
+  .ex{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .ex > div{border-radius:16px;padding:14px 16px;background:var(--panel)}
+  .ex > div.on{background:var(--gold-l);box-shadow:inset 0 0 0 2px var(--gold)}
+  .ex small{display:block;font-size:14px;font-weight:700;color:var(--mute);letter-spacing:.06em}
+  .ex .on small{color:var(--gold)}
+  .ex p{font-size:16px;line-height:1.75}
+  @media (max-width:560px){.ex{grid-template-columns:1fr}}
   @media (prefers-reduced-motion:reduce){.hero img{animation:none}}
   @media print{
     @page{size:A4;margin:12mm}
@@ -184,7 +206,12 @@
     .rules li,.fu,.decide li,.stat,.vs > div,.gain,.prec,.spec > div,.tt div,.sum dl div,.faq details{break-inside:avoid}
     .rules p,.fu p,.gain p,.faq details p{font-size:10pt}
     .faq details p{display:block}
-    .future{grid-template-columns:repeat(3,1fr)}
+    .future,.ladder{grid-template-columns:repeat(3,1fr)}
+    .ladder li,.ex > div{break-inside:avoid}
+    .ladder li,.ladder li:nth-child(1),.ladder li:nth-child(2),.ladder li.go{min-height:0}
+    footer{break-before:avoid;font-size:9pt}
+    .end{padding:14px}
+    .end img{display:none}
     .wrap,.card,.sum,.rules,.faq,.decide,.tt,.voices,.why{display:block}
     .wrap > * + *{margin-top:10px}
     .card > * + *,.sum > * + *{margin-top:8px}
@@ -203,7 +230,7 @@
       <p class="to">サイバーシルクロード八王子 御中<br>2026年11月　fulfull株式会社</p>
       <p class="kind">会員向けセミナー　ご検討資料</p>
       <h1>会員企業を、<br><em>人が辞めても、<br>仕事が止まらない</em><br>会社へ。</h1>
-      <p class="sub">AIで「誰がやっても同じように回る仕組み」をつくる、会員向けセミナーのご提案です。<br>特定の事業者に偏らない運営の形も、あわせてまとめました。</p>
+      <p class="sub">AIに聞いて終わり、ではありません。<br>毎月の事務をAIに任せて「自動で回る」ところまでを扱う、会員向けセミナーのご提案です。<br>特定の事業者に偏らない運営の形も、あわせてまとめました。</p>
     </div>
     <img src="img/mascot_base.webp" alt="そろばんを持ったAIのロボが片手を上げて挨拶している" width="130" height="130">
   </header>
@@ -211,11 +238,12 @@
   <section class="sum" aria-labelledby="sum">
     <h2 id="sum">30秒でわかる、このご提案</h2>
     <dl>
+      <div><dt>ちがい</dt><dd>多くのAI研修が扱うのは「AIに聞く・作らせる」までです。<br>この会は、事務をAIに任せて、人が毎回触らなくても回る「自動化」の入口までを扱います（2章）。</dd></div>
       <div><dt>なにを</dt><dd>会員企業が、毎月くり返す事務を1つ選び、AIで「自動で回る形」にする入口までを体験する2時間のセミナー</dd></div>
       <div><dt>だれに</dt><dd>会員企業の経営者・事務担当の方（15名程度）</dd></div>
       <div><dt>なぜいま</dt><dd>中小企業の6割が人手不足です。<br>11月19日のAI体験セミナーに続く「次の一歩」としてご案内できます。</dd></div>
       <div><dt>御会のご負担</dt><dd>日程と会場、告知です。<br>当日の資料は、こちらで用意します。</dd></div>
-      <div><dt>中立性</dt><dd>講座名に事業者名を出さない、売らない、名簿は御会の規定どおり、事後の相談は御会の窓口とビジネスお助け隊へ。<br>8つのお約束でお受けします（3章）。</dd></div>
+      <div><dt>中立性</dt><dd>講座名に事業者名を出さない、講師から営業しない、名簿は御会の規定どおり、事後の相談は御会の窓口とビジネスお助け隊へ。<br>8つのお約束でお受けします（3章）。</dd></div>
     </dl>
   </section>
 
@@ -236,23 +264,36 @@
   </section>
 
   <section class="card" aria-labelledby="s2">
-    <h2 id="s2"><span class="no">2</span>このセミナーで、会員企業に見せたい未来</h2>
+    <h2 id="s2"><span class="no">2</span>この会の違いは、「自動化」まで扱うことです</h2>
+    <p>AIの使い方には、3つの段階があります。<br>多くのAI研修が扱うのは、1と2です。<br>11月19日のAI体験セミナーで触れたAIを、次の3「任せて自動で回す」へ進めるのが、この会です。<br>自社の仕事で3の入口を組み立て、代表の数件は講師の画面で実際に動かして、自動で回る様子をご覧いただきます。</p>
+    <ol class="ladder">
+      <li><span class="st">STEP 1</span><b>AIに聞く</b><p>調べものや相談に使う。<br>人が毎回、聞きに行く。</p><span class="tag">多くのAI研修</span></li>
+      <li><span class="st">STEP 2</span><b>AIに作らせる</b><p>文章・資料・議事録を作る。<br>人が毎回、頼みに行く。</p><span class="tag">多くのAI研修</span></li>
+      <li class="go"><span class="st">STEP 3</span><b>AIに任せて、<br>自動で回す</b><p>毎朝・毎月の事務を、決めた手順どおりにAIが進める。<br>人は確認が中心になる。</p><span class="tag">この会</span></li>
+    </ol>
+    <p class="note">自動で回す仕組みは、特定のAIサービスに限りません。<br>当日は道具の操作よりも、仕事の切り出し方と任せ方の型を中心に扱います。</p>
+    <h3 class="h3t">たとえば、毎月の請求書づくりなら</h3>
+    <div class="ex">
+      <div><small>STEP 1・2 のままだと</small><p>担当者が毎月AIを開いて、頼み方を考えて作らせる。<br>担当者が辞めると、AIの使い方も一緒に消える。</p></div>
+      <div class="on"><small>STEP 3 まで行くと</small><p>月末になると、AIが手順どおりに下書きをそろえておく。<br>担当者は確認して送るだけで、担当が変わっても同じように回る。</p></div>
+    </div>
+    <h3 class="h3t">自動化まで行くと、会社はこう変わります</h3>
     <div class="future">
       <div class="fu"><span class="ic" aria-hidden="true">01</span><b>人が辞めても、仕事が止まらない</b><p>毎月の事務を手順どおりにAIが進めるので、担当者が抜けたときの引き継ぎの穴が小さくなります。</p></div>
       <div class="fu"><span class="ic" aria-hidden="true">02</span><b>新しい人が、初日から同じ型で回せる</b><p>AIへの指示書と手順が、そのまま新人向けのマニュアルになります。</p></div>
       <div class="fu"><span class="ic" aria-hidden="true">03</span><b>仕組みが、会社の資産になる</b><p>指示書・手順・自動化の流れが、社内に積み上がります。<br>始めた分だけ、次の人に渡せるものが増えていきます。</p></div>
     </div>
-    <h3 class="h3t">「見て終わり」にしないのが、この会の違いです</h3>
+    <h3 class="h3t">多くのAI研修と、この会</h3>
     <div class="vs">
-      <div class="ng"><h3>よくあるAIセミナー</h3><ul>
-        <li>見て「すごい」で終わる</li>
+      <div class="ng"><h3>多くのAI研修</h3><ul>
+        <li>AIの使い方や、頼み方のコツを習う</li>
         <li>資料ができた、議事録ができた、で終わる</li>
-        <li>翌週には、元のやり方に戻る</li>
+        <li>使うたびに、人がAIに頼む</li>
       </ul></div>
       <div class="ok"><h3>この会</h3><ul>
         <li>自社の「毎月くり返す仕事」を1つ選ぶ</li>
-        <li>AIに渡す指示書を自分で書き、代表の数件はその場で動かす</li>
-        <li>社内で続けるための手順を持ち帰る</li>
+        <li>その仕事を、AIが自動で進める指示書にする（代表の数件はその場で動かす）</li>
+        <li>人が変わっても回り続けるための手順を持ち帰る</li>
       </ul></div>
     </div>
   </section>
@@ -263,11 +304,11 @@
     <p>御会が中立の立場であることは、私たちにとっても大切です。<br>「特定の事業者の宣伝の場になった」と見えないよう、次の8つをお約束します。</p>
     <ol class="rules">
       <li class="key"><span class="n">1</span><div><b>主役はテーマ。講座名に事業者名を出しません</b><p>主催は御会です。<br>告知文とチラシは、御会でいつもどおりお作りいただく前提です。<br>講師の所属は講師紹介の欄だけで十分です。<br>ご希望があれば、講座内容の説明文の案やチラシのデザイン案もお出しします。<br>その場合も、事業者名や特定のAIサービスの名前は前に出しません。<br>体裁は御会の様式に合わせ、文面と掲載の最終判断は御会でお願いします。</p></div></li>
-      <li class="key"><span class="n">2</span><div><b>売りません。勧誘も、あとからの営業連絡もしません</b><p>当日も事後も、講師から参加者へのご案内・勧誘はしません。<br>配布資料に、講師側の申込先・料金・LINEなどの窓口は載せません。<br>実演の画面でも、講師の会社名やサービス名は伏せて見せます。</p></div></li>
+      <li class="key"><span class="n">2</span><div><b>講座は、学びの場に徹します</b><p>講師から参加者へは、当日も事後も、営業のご案内をしません。<br>配布資料や実演の画面にも、講師側の申込先やサービス名は出しません。</p></div></li>
       <li class="key"><span class="n">3</span><div><b>参加者の名簿は、御会の規定どおりに</b><p>申込とアンケートは御会のフォームで行います。<br>名簿を講師と共有するかどうかは、御会の規定でご判断ください。<br>共有がなくても運営できます。<br>共有いただける場合も、当日の受付と準備だけに使い、事後のご連絡には使いません。<br>アンケートは、次回の改善のために、個人や会社が特定されない集計の形で共有をお願いします。</p></div></li>
       <li class="key"><span class="n">4</span><div><b>事後の相談は、御会の窓口とビジネスお助け隊へおつなぎします</b><p>「うちでもやってみたい」という声は、御会のIT相談・デジタル出張相談や、ビジネスお助け隊の無料個別相談へご案内します。<br>お助け隊の相談は、お助け隊の決まりに沿って行います。<br>担当はいつもの割り振りで決まり、講師が役員の1人として担当することもあります（無料）。<br>会社の側から講師に研修のご依頼があった場合に限り、御会やお助け隊の事業とは切り離し、会社と講師の間の有償の研修として別に契約します。<br>会員企業の次の一歩が、まず御会の支援につながる流れです。</p></div></li>
-      <li><span class="n">5</span><div><b>特定のAIサービスを勧めません</b><p>実演は講師の画面で、Anthropic社のClaude Codeを使います（参加者のアカウントは不要です）。<br>ただし教えるのは「仕事の切り出し方」「指示書の書き方」「自動化の型」で、ChatGPT・Gemini・Copilotなどでも使える形で伝えます。<br>どれを選ぶかの比べ方も、中立にご紹介します。</p></div></li>
-      <li><span class="n">6</span><div><b>講師謝金は、御会の規定どおりに</b><p>無償でお受けすると、かえって「営業のための登壇」に見えるおそれがあります。<br>ほかの講師の方と同じ規定・同じ扱いでお願いします。</p></div></li>
+      <li><span class="n">5</span><div><b>特定のAIサービスを勧めません</b><p>実演は講師の画面で、Anthropic社のClaude Codeを使います（参加者のアカウントは不要です）。<br>ただし教えるのは「仕事の切り出し方」「指示書の書き方」「自動化の型」で、ChatGPT・Gemini・Copilotなどでも使える形で伝えます。<br>どれを選ぶかの比べ方も、中立にご紹介します。<br>これまでの御会のAIセミナーでも、NotebookLM（Google社）などのサービスを使って実演した回がありました。<br>実演で1つのサービスを使うことは、これまでの会と同じ扱いと考えています。</p></div></li>
+      <li><span class="n">6</span><div><b>講師謝金は、御会の規定どおりに</b><p>講師謝金は、ほかの講師の方と同じく、御会の規定どおりでお願いします。<br>とはいえ、日ごろお世話になっている御会のことですので、規定やご予算の都合で謝金のない枠になる場合も、その形でお受けします。<br>どちらの場合も、この8つのお約束は変わりません。</p></div></li>
       <li><span class="n">7</span><div><b>「AI活用シリーズ」の1回として</b><p>3月・11月のAI体験セミナーに続く1回として位置づけます。<br>ほかの回の講師は御会が選び、この会の講師が続けて担うことは前提にしません。</p></div></li>
       <li><span class="n">8</span><div><b>実績の出し方・撮影・事後の連絡も、御会のルールに従います</b><p>登壇したことを講師側の実績として載せるのは、御会にご了承いただいた範囲・書き方だけです。<br>当日の撮影は御会のご判断に従い、参加者が写る写真は講師側では使いません。<br>参加者から講師へ直接ご連絡があった場合も、まず御会の相談窓口かお助け隊の無料相談をご案内します。</p></div></li>
     </ol>
@@ -308,7 +349,7 @@
     <h3 class="h3t">2時間の流れ</h3>
     <div class="tt" aria-label="2時間の流れ">
       <div><b>0:00</b><span>人手不足とAI　いま中小企業で何が起きているか</span></div>
-      <div><b>0:15</b><span>実物を見る　AIが毎朝の事務を進めている画面（社名・サービス名は伏せます）</span></div>
+      <div><b>0:15</b><span>実物を見る　AIが毎朝の事務を進めている例（社名・サービス名は伏せます）</span></div>
       <div><b>0:30</b><span>仕事を切り出す　「毎月くり返す仕事」を1つ選ぶ</span></div>
       <div><b>0:50</b><span>指示書を書く　全員が「AIに渡す指示書」を1枚書き、代表の3〜4件を講師の画面で動かす</span></div>
       <div><b>1:30</b><span>社内に根づかせる　続ける手順と、AIサービスの選び方（中立に）</span></div>
@@ -330,12 +371,12 @@
   <section class="card" aria-labelledby="s7">
     <h2 id="s7"><span class="no">7</span>上の方から聞かれそうなこと</h2>
     <div class="faq">
-      <details open><summary>一社に肩入れしているように見えませんか。</summary><p>講座名・告知は御会主催のテーマで組み、講師の所属は紹介欄だけにします。<br>売らない・名簿は御会の規定どおり・事後の相談は御会の窓口とお助け隊へ、の3点で、講師の側から会員企業に働きかける流れはつくりません。<br>実績の出し方や撮影も、御会のルールに従います（3章）。</p></details>
+      <details open><summary>一社に肩入れしているように見えませんか。</summary><p>講座名・告知は御会主催のテーマで組み、講師の所属は紹介欄だけにします。<br>営業しない・名簿は御会の規定どおり・事後の相談は御会の窓口とお助け隊へ、の3点で、講師の側から会員企業に働きかける流れはつくりません。<br>実績の出し方や撮影も、御会のルールに従います（3章）。</p></details>
       <details open><summary>あとから参加者に営業がいきませんか。</summary><p>講師から参加者へ営業のご連絡はしません。<br>名簿の共有は御会のご判断で、共有いただいた場合も事後のご連絡には使いません。<br>当日の資料にも、講師側の申込先や料金は載せません。</p></details>
       <details open><summary>その先、講師に頼みたい会社が出たら？</summary><p>まずは御会の窓口や、ビジネスお助け隊の無料個別相談でお受けします。<br>そのうえで、会社のほうから講師に研修を頼みたいとご依頼があった場合は、有償の研修として、会社と講師の間で別に契約します。<br>ほかの専門家や事業者を選ぶことも、もちろん自由です。<br>御会の窓口やお助け隊でも、ほかの専門家や支援策を含めてご案内いただけます。<br>講師側も事業として行っているため、その線を最初からはっきりさせておきます。</p></details>
       <details open><summary>特定のAI製品の宣伝になりませんか。</summary><p>実演はClaude Codeで行いますが、教えるのは仕事の切り出し方と指示書の書き方で、ChatGPT・Gemini・Copilotなどでも使える形です。<br>AIサービスの選び方は、比べ方の観点を中立にお伝えします。</p></details>
       <details open><summary>会社の情報をAIに入れて大丈夫ですか。</summary><p>当日は見本のデータだけを使い、会社の個人情報やお客さま情報は入れません。<br>社内で使うときに気をつけることも、講座の中でお伝えします。</p></details>
-      <details open><summary>なぜ無償ではないのですか。</summary><p>無償だと「営業目的の登壇」に見えるおそれがあるためです。<br>ほかの講師の方と同じ規定でお受けするほうが、御会の中立性を保ちやすいと考えています。</p></details>
+      <details open><summary>謝金はどうなりますか。</summary><p>基本は、ほかの講師の方と同じく御会の規定どおりでお願いします。<br>規定やご予算の都合で謝金のない枠になる場合も、その形でお受けし、8つのお約束は変わりません。</p></details>
     </div>
   </section>
 
