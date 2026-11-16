@@ -14,152 +14,184 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@700;900&family=Noto+Sans+JP:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Cormorant+Garamond:wght@500;600&family=Shippori+Mincho+B1:wght@600;700&display=swap">
 <style>
   :root{
     color-scheme:light;
-    --teal:#0E7C86; --deep:#0A5A62; --ink:#1C3236; --ink2:#4A6468;
-    --soft:#EEF6F7; --line:#D5E4E6; --gold:#9A6F17; --goldfill:#D9A441; --goldbg:#FBF4E3; --bg:#F6FAFA; --card:#fff;
+    --ink:#111318; --ink2:#3A3F48; --mute:#5A5F69; --hair:#DCDCD8; --hair2:#C9CAC5;
+    --page:#F5F7FB; --card:#FFFFFF; --panel:#F3F5F9; --ai:#16244A; --ai-l:#E9EDF5; --sky:#3A6EA5; --sky-line:#C9D5E6;
+    --gold:#A8812F; --gold-l:#FBF4E3; --gold-line:#E8D6A8;
+    --serif:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif;
+    --sans:"BIZ UDPGothic","Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+    --latin:"Cormorant Garamond","Times New Roman",serif;
+    --grad:linear-gradient(135deg,#16244A 0%,#28477F 55%,#3A6EA5 100%);
   }
   *{box-sizing:border-box;min-width:0}
-  body{margin:0;background:var(--bg);color:var(--ink);
-    font-family:"Noto Sans JP","Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;
-    font-size:18px;font-weight:500;line-height:1.9;text-wrap:pretty;word-break:auto-phrase}
-  .wrap{max-width:860px;margin:0 auto;padding:0 18px 72px;display:grid;gap:22px}
+  body{margin:0;background:var(--page);color:var(--ink);font-family:var(--sans);
+    font-size:18px;line-height:1.9;text-wrap:pretty;word-break:auto-phrase}
+  .wrap{max-width:860px;margin:0 auto;padding:0 16px 72px;display:grid;gap:20px}
   p{margin:0}
-  .maru{font-family:"Zen Maru Gothic","Noto Sans JP",sans-serif;font-weight:900}
+  .maru{font-family:var(--serif);font-weight:700;letter-spacing:.04em}
   .nw{white-space:nowrap}
-  .note{font-size:14.5px;color:var(--ink2);line-height:1.8}
+  .note{font-size:15px;color:var(--mute);line-height:1.8}
   img{max-width:100%;height:auto;display:block}
-  a{color:var(--teal);text-underline-offset:3px;overflow-wrap:anywhere}
+  a{color:var(--sky);text-underline-offset:3px;overflow-wrap:anywhere}
+  .no,.n,.big,.tt b,.fu .ic{font-feature-settings:"lnum" 1,"pnum" 1}
 
-  /* hero */
-  .hero{background:linear-gradient(160deg,var(--deep),var(--teal));color:#fff;border-radius:0 0 28px 28px;margin:0 -18px;padding:30px 22px 28px;display:grid;grid-template-columns:1fr 130px;gap:16px;align-items:center}
-  .hero .to{font-size:15px;font-weight:700;opacity:.92;letter-spacing:.03em}
-  .hero .kind{display:inline-block;margin-top:10px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:2px 14px;font-size:14.5px;font-weight:700}
-  .hero h1{font-family:"Zen Maru Gothic","Noto Sans JP",sans-serif;font-weight:900;font-size:clamp(28px,6.4vw,44px);line-height:1.35;margin:12px 0 12px;text-wrap:balance}
-  .hero h1 em{font-style:normal;color:#FFE3A3}
-  .hero .sub{font-size:17px;opacity:.96}
-  .hero img{width:130px;justify-self:end;filter:drop-shadow(0 8px 16px rgba(0,0,0,.25))}
-  @media (max-width:560px){.hero{grid-template-columns:1fr}.hero img{width:96px;justify-self:start;order:-1}}
+  /* 表紙 */
+  .hero{background:var(--grad);color:#F2F3F6;border-radius:0 0 36px 36px;margin:0 -16px;padding:40px 24px 44px;display:grid;grid-template-columns:1fr 150px;gap:16px;align-items:end;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;left:-90px;bottom:-140px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(214,179,106,.25),rgba(214,179,106,0) 70%)}
+  .hero::after{content:"";position:absolute;right:-80px;top:-100px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.16),rgba(255,255,255,0) 70%)}
+  .hero > *{position:relative;z-index:1}
+  .hero .to{font-size:15px;color:#DDE2EC;letter-spacing:.04em}
+  .hero .kind{display:inline-block;margin-top:12px;background:rgba(255,255,255,.12);border-radius:999px;padding:3px 16px;font-size:14.5px;font-weight:700;letter-spacing:.12em;color:#E6C989}
+  .hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(29px,6.4vw,44px);line-height:1.42;margin:16px 0 14px;letter-spacing:.04em;text-wrap:balance}
+  .hero h1 em{font-style:normal;color:#E6C989}
+  .hero .sub{font-size:16.5px;color:#E4E8F0;background:rgba(255,255,255,.1);border-radius:16px;padding:14px 18px;line-height:1.8}
+  .hero img{width:150px;justify-self:end;filter:drop-shadow(0 12px 24px rgba(0,0,0,.25));animation:float 4s ease-in-out infinite}
+  @keyframes float{50%{transform:translateY(-8px)}}
+  @media (max-width:640px){
+    .hero{grid-template-columns:1fr;padding:32px 20px 34px}
+    .hero img{position:absolute;right:10px;top:14px;width:92px}
+    .hero .to{margin-right:92px}
+  }
 
-  /* summary */
-  .sum{background:#fff;border:2px solid var(--goldfill);border-radius:20px;padding:22px 20px;display:grid;gap:12px}
-  .sum h2{margin:0;font-family:"Zen Maru Gothic","Noto Sans JP",sans-serif;font-weight:900;font-size:clamp(21px,4.4vw,25px);color:var(--gold)}
-  .sum dl{margin:0;display:grid;gap:0;border-top:1px solid #EAD9AE}
-  .sum dl div{display:grid;grid-template-columns:7.5em 1fr;gap:12px;padding:10px 0;border-bottom:1px solid #EAD9AE}
-  .sum dt{font-weight:800;color:var(--deep)}
+  /* 要約 */
+  .sum{background:var(--card);border-radius:24px;padding:24px 20px;display:grid;gap:12px;box-shadow:0 6px 20px rgba(22,36,74,.10);margin-top:-34px;position:relative;z-index:2;border-top:5px solid var(--gold)}
+  .sum h2{margin:0;font-family:var(--serif);font-weight:700;font-size:clamp(21px,4.4vw,25px);color:var(--ai);letter-spacing:.04em}
+  .sum h2::before{content:"SUMMARY";display:block;font-family:var(--latin);font-size:13.5px;letter-spacing:.22em;color:var(--gold);font-weight:600;line-height:1.3}
+  .sum dl{margin:0;display:grid;border-top:1px solid var(--hair)}
+  .sum dl div{display:grid;grid-template-columns:7.5em 1fr;gap:12px;padding:11px 0;border-bottom:1px solid var(--hair)}
+  .sum dt{font-weight:700;color:var(--ai)}
   .sum dd{margin:0}
   @media (max-width:520px){.sum dl div{grid-template-columns:1fr;gap:2px}}
 
-  /* card */
-  .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px 22px;display:grid;gap:14px;box-shadow:0 6px 18px rgba(10,90,98,.06)}
-  .card h2{display:flex;gap:12px;align-items:center;margin:0;font-family:"Zen Maru Gothic","Noto Sans JP",sans-serif;font-weight:900;font-size:clamp(22px,4.6vw,27px);line-height:1.4;color:var(--deep);text-wrap:balance}
-  .card h2 .no{flex:none;width:40px;height:40px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-size:19px}
-  .h3t{margin:4px 0 0;font-family:"Zen Maru Gothic","Noto Sans JP",sans-serif;font-weight:900;font-size:clamp(19px,4.2vw,22px);color:var(--deep);line-height:1.45}
+  /* カード */
+  .card{background:var(--card);border-radius:24px;padding:26px 20px 24px;display:grid;gap:14px;box-shadow:0 4px 18px rgba(22,36,74,.06)}
+  .card h2{display:flex;gap:14px;align-items:center;margin:0 0 4px;font-family:var(--serif);font-weight:700;font-size:clamp(21px,4.6vw,27px);line-height:1.45;color:var(--ink);letter-spacing:.04em;text-wrap:balance}
+  .card h2 .no{flex:none;width:52px;height:52px;border-radius:16px;background:var(--grad);color:#fff;display:grid;place-items:center;font-family:var(--latin);font-size:27px;font-weight:600}
+  .h3t{margin:10px 0 0;font-family:var(--serif);font-weight:700;font-size:clamp(19px,4.2vw,21px);color:var(--ai);line-height:1.5;letter-spacing:.03em}
 
-  /* data */
-  .stat{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;background:var(--goldbg);border:1px solid #EAD9AE;border-radius:16px;padding:16px 18px}
-  .stat .big{font-family:"Zen Maru Gothic","Noto Sans JP",sans-serif;font-weight:900;font-size:clamp(44px,11vw,64px);line-height:1;color:var(--teal)}
-  .stat .big small{font-size:.42em;color:var(--ink)}
+  /* 数字 */
+  .stat{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;background:var(--ai-l);border-radius:18px;padding:18px 20px}
+  .stat .big{font-family:var(--latin);font-weight:600;font-size:clamp(60px,13vw,84px);line-height:.9;color:var(--ai)}
+  .stat .big small{font-family:var(--serif);font-size:.36em;color:var(--ink);font-weight:700;margin-left:2px}
   .stat p{font-size:16.5px;line-height:1.75}
-  @media (max-width:420px){.stat{grid-template-columns:1fr;gap:6px}}
+  @media (max-width:420px){.stat{grid-template-columns:1fr;gap:8px}}
   .voices{display:grid;gap:8px;margin:0;padding:0;list-style:none}
-  .voices li{background:var(--soft);border-radius:12px;padding:10px 14px;font-weight:700}
-  .voices li::before{content:"「";color:var(--teal)}
-  .voices li::after{content:"」";color:var(--teal)}
+  .voices li{background:var(--panel);border-left:4px solid var(--sky);border-radius:4px 14px 14px 4px;padding:10px 14px;font-weight:700}
+  .voices li::before{content:"「";color:var(--sky)}
+  .voices li::after{content:"」";color:var(--sky)}
 
-  /* future */
+  /* 未来 */
   .future{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-  .fu{border-radius:16px;padding:16px;background:linear-gradient(170deg,#fff,var(--soft));border:1px solid var(--line);display:grid;gap:6px;align-content:start}
-  .fu .ic{font-size:30px;line-height:1}
-  .fu b{font-size:18px;line-height:1.5;color:var(--deep)}
-  .fu p{font-size:16px;line-height:1.75}
+  .fu{border-radius:18px;padding:16px 16px 18px;background:var(--panel);border-top:5px solid var(--sky);display:grid;gap:6px;align-content:start}
+  .fu:nth-child(2){border-top-color:var(--gold)}
+  .fu:nth-child(3){border-top-color:var(--ai)}
+  .fu .ic{font-family:var(--latin);font-size:30px;line-height:1;font-weight:600;color:var(--sky)}
+  .fu:nth-child(2) .ic{color:var(--gold)}
+  .fu:nth-child(3) .ic{color:var(--ai)}
+  .fu b{font-size:18px;line-height:1.55;color:var(--ink)}
+  .fu p{font-size:16px;line-height:1.75;color:var(--ink2)}
   .vs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-  .vs > div{border-radius:14px;padding:14px 16px;display:grid;gap:6px;align-content:start}
-  .vs .ng{background:#F2F4F4;color:var(--ink2)}
-  .vs .ok{background:var(--soft);border:2px solid var(--teal)}
-  .vs h3{margin:0;font-family:"Zen Maru Gothic","Noto Sans JP",sans-serif;font-weight:900;font-size:19px;line-height:1.4}
-  .vs .ok h3{color:var(--deep)}
+  .vs > div{border-radius:16px;padding:16px 18px;display:grid;gap:8px;align-content:start}
+  .vs .ng{background:var(--panel);color:var(--ink2)}
+  .vs .ok{background:var(--ai-l);box-shadow:inset 0 0 0 2px var(--ai)}
+  .vs h3{margin:0;font-family:var(--serif);font-weight:700;font-size:19px;line-height:1.45}
+  .vs .ok h3{color:var(--ai)}
   .vs ul{margin:0;padding:0;list-style:none;display:grid;gap:6px;font-size:16px;line-height:1.7}
   .vs li{display:grid;grid-template-columns:20px 1fr;gap:4px}
-  .vs .ng li::before{content:"・";font-weight:800}
-  .vs .ok li::before{content:"✓";color:var(--teal);font-weight:800}
+  .vs .ng li::before{content:"・";font-weight:700}
+  .vs .ok li::before{content:"✓";color:var(--sky);font-weight:700}
   @media (max-width:560px){.vs{grid-template-columns:1fr}}
 
-  /* neutral (core) */
-  .core{border:2px solid var(--teal);background:linear-gradient(180deg,#fff,#F3FAFA)}
-  .badge{justify-self:start;background:var(--goldfill);color:#fff;border-radius:999px;padding:2px 14px;font-size:15px;font-weight:800;letter-spacing:.04em}
+  /* 中立性 */
+  .core{box-shadow:0 0 0 2px var(--ai),0 8px 24px rgba(22,36,74,.10)}
+  .badge{justify-self:start;background:var(--gold);color:#fff;border-radius:999px;padding:3px 16px;font-size:14.5px;font-weight:700;letter-spacing:.08em}
   .rules{display:grid;gap:10px;margin:0;padding:0;list-style:none}
-  .rules li{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px}
-  .rules .n{width:44px;height:44px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-family:"Zen Maru Gothic",sans-serif;font-weight:900;font-size:20px}
-  .rules b{display:block;font-size:18px;line-height:1.5;color:var(--deep);margin-bottom:2px}
-  .rules p{font-size:16px;line-height:1.75}
-  .rules li.key{border:2px solid var(--goldfill);background:var(--goldbg)}
-  .rules li.key .n{background:var(--goldfill)}
+  .rules li{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start;background:var(--panel);border-radius:16px;padding:14px}
+  .rules .n{width:40px;height:40px;border-radius:50%;background:var(--ai);color:#fff;display:grid;place-items:center;font-family:var(--latin);font-weight:600;font-size:21px}
+  .rules b{display:block;font-size:18px;line-height:1.55;color:var(--ink);margin-bottom:2px}
+  .rules p{font-size:16px;line-height:1.75;color:var(--ink2)}
+  .rules li.key{background:var(--gold-l);box-shadow:inset 0 0 0 2px var(--gold)}
+  .rules li.key .n{background:var(--gold)}
   .flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:8px;align-items:stretch;text-align:center}
-  .flow div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 8px;font-size:15.5px;line-height:1.6;font-weight:700;display:grid;place-items:center}
-  .flow div.us{background:var(--soft);border:2px solid var(--teal);color:var(--deep)}
-  .flow .ar{border:0;background:none;color:var(--gold);font-size:22px;padding:0}
+  .flow div{background:var(--panel);border-radius:14px;padding:10px 8px;font-size:15.5px;line-height:1.6;font-weight:700;display:grid;place-items:center}
+  .flow div.us{background:var(--grad);color:#fff}
+  .flow .ar{background:none;color:var(--gold);font-size:22px;padding:0}
   @media (max-width:560px){.flow{grid-template-columns:1fr}.flow .ar{transform:rotate(90deg)}}
 
-  /* reasons */
+  /* 講師 */
   .why{display:grid;gap:10px;margin:0;padding:0;list-style:none}
-  .why li{border-left:4px solid var(--teal);padding:4px 0 4px 14px}
-  .why b{color:var(--deep)}
-  .prec{background:var(--soft);border-radius:14px;padding:14px 16px;display:grid;gap:8px}
-  .prec b{color:var(--deep)}
+  .why li{border-left:4px solid var(--sky);padding:4px 0 4px 14px}
+  .why b{color:var(--ai)}
+  .prec{background:var(--ai-l);border-radius:16px;padding:16px 18px;display:grid;gap:8px}
+  .prec b{color:var(--ai)}
 
-  /* table */
-  .spec{display:grid;border-top:1px solid var(--line)}
-  .spec div{display:grid;grid-template-columns:6.5em 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
-  .spec dt{font-weight:800;color:var(--teal)}
+  /* 開き方 */
+  .spec{display:grid;border-top:1px solid var(--hair)}
+  .spec > div{display:grid;grid-template-columns:6.5em 1fr;gap:12px;padding:11px 0;border-bottom:1px solid var(--hair)}
+  .spec dt{font-weight:700;color:var(--ai)}
   .spec dd{margin:0}
-  .tt{display:grid;border-top:1px solid var(--line)}
-  .tt div{display:grid;grid-template-columns:58px 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
-  .tt b{font-variant-numeric:tabular-nums;color:var(--teal);font-weight:800}
-  .tt .by{display:inline-block;font-size:14px;font-weight:700;color:var(--gold);background:var(--goldbg);border-radius:6px;padding:0 8px;margin-left:4px}
-  @media (max-width:520px){.spec div{grid-template-columns:1fr;gap:2px}}
+  .tt{display:grid;gap:6px}
+  .tt div{display:grid;grid-template-columns:66px 1fr;gap:12px;align-items:center;padding:10px 12px;border-radius:12px;background:var(--panel)}
+  .tt b{background:var(--card);border-radius:999px;text-align:center;font-family:var(--latin);font-size:18px;font-weight:600;color:var(--ai)}
+  .tt span{font-size:16.5px;line-height:1.65}
+  .tt .by{display:inline-block;font-size:13.5px;font-weight:700;color:var(--gold);background:var(--gold-l);border-radius:999px;padding:0 10px;margin-left:4px}
+  @media (max-width:520px){.spec > div{grid-template-columns:1fr;gap:2px}}
 
-  .gains{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
-  .gain{background:var(--soft);border-radius:14px;padding:14px 16px}
-  .gain b{display:block;font-size:17px;line-height:1.5;color:var(--deep);margin-bottom:4px}
-  .gain p{font-size:16px;line-height:1.75}
+  .gains{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media (max-width:560px){.gains{grid-template-columns:1fr}}
+  .gain{background:var(--panel);border-radius:16px;padding:16px 18px;border-left:4px solid var(--gold)}
+  .gain b{display:block;font-size:17px;line-height:1.55;color:var(--ai);margin-bottom:4px}
+  .gain p{font-size:16px;line-height:1.75;color:var(--ink2)}
 
-  /* faq */
-  .faq{display:grid;gap:10px}
-  .faq details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 16px}
-  .faq summary{cursor:pointer;font-weight:800;color:var(--deep);list-style:none;display:grid;grid-template-columns:28px 1fr;gap:6px}
+  /* よくある質問 */
+  .faq{display:grid;gap:8px}
+  .faq details{background:var(--panel);border-radius:14px;padding:12px 16px}
+  .faq details[open]{background:var(--ai-l)}
+  .faq summary{cursor:pointer;font-weight:700;color:var(--ink);list-style:none;display:grid;grid-template-columns:28px 1fr;gap:6px}
   .faq summary::-webkit-details-marker{display:none}
-  .faq summary::before{content:"Q";color:var(--goldfill);font-family:"Zen Maru Gothic",sans-serif;font-weight:900;font-size:20px;line-height:1.5}
-  .faq details p{margin-top:8px;padding-left:34px;font-size:16.5px;line-height:1.8}
+  .faq summary::before{content:"Q";color:var(--gold);font-family:var(--latin);font-weight:600;font-size:23px;line-height:1.3}
+  .faq details p{margin-top:8px;padding-left:34px;font-size:16.5px;line-height:1.8;color:var(--ink2)}
 
-  /* decide */
+  /* ご判断 */
   .decide{display:grid;gap:10px;margin:0;padding:0;list-style:none}
-  .decide li{display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:start;background:#fff;border:2px solid var(--teal);border-radius:14px;padding:12px 14px}
-  .decide li::before{content:"□";font-size:22px;line-height:1.3;color:var(--teal);font-weight:800}
-  .decide b{color:var(--deep)}
+  .decide li{display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:start;background:var(--gold-l);border-radius:16px;padding:14px 16px;box-shadow:inset 0 0 0 1px var(--gold-line)}
+  .decide li::before{content:"□";font-size:22px;line-height:1.3;color:var(--gold);font-weight:700}
+  .decide b{color:var(--ai)}
 
-  .end{text-align:center;display:grid;justify-items:center;gap:12px;padding:12px 0 0}
-  .end img{width:100px}
-  .end .maru{font-size:clamp(22px,5vw,28px);color:var(--deep);line-height:1.5}
-  footer{font-size:14px;color:var(--ink2);text-align:center;line-height:1.8}
+  .end{text-align:center;display:grid;justify-items:center;gap:12px;padding:30px 20px 28px;background:var(--grad);color:#F2F3F6;border-radius:24px}
+  .end img{width:100px;filter:drop-shadow(0 10px 20px rgba(0,0,0,.25))}
+  .end .maru{font-size:clamp(22px,5vw,28px);color:#fff;line-height:1.55}
+  .end a{color:#E6C989}
+  .end .note{color:#D3D9E6}
+  footer{font-size:14px;color:var(--mute);text-align:center;line-height:1.8}
 
+  @media (prefers-reduced-motion:reduce){.hero img{animation:none}}
   @media print{
     @page{size:A4;margin:12mm}
     body{background:#fff;font-size:11pt;line-height:1.7}
     .wrap{max-width:none;padding:0;gap:10px}
-    .hero{margin:0;border-radius:12px;padding:18px 20px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-    .hero h1{font-size:26pt;margin:6px 0}
-    .hero img{width:90px}
-    .card,.sum{box-shadow:none;padding:14px 16px;gap:8px}
+    .hero{margin:0;border-radius:14px;padding:20px 22px}
+    .hero img{animation:none;width:90px}
+    .hero h1{font-size:25pt;margin:8px 0}
+    .sum{margin-top:0}
+    .card,.sum{box-shadow:none;border:1px solid var(--hair);padding:14px 16px;gap:8px}
+    .core{box-shadow:none;border:2px solid var(--ai)}
     .card h2,.h3t,.sum h2{break-after:avoid}
-    .rules li,.fu,.decide li,.stat,.vs > div,.gain,.prec,.spec div,.tt div,.sum dl div{break-inside:avoid}
+    .card h2 .no{width:40px;height:40px;font-size:21px;border-radius:12px}
+    .rules li,.fu,.decide li,.stat,.vs > div,.gain,.prec,.spec > div,.tt div,.sum dl div,.faq details{break-inside:avoid}
     .rules p,.fu p,.gain p,.faq details p{font-size:10pt}
-    .card,.sum,.stat,.rules li,.fu,.vs > div,.decide li,.badge,.flow div,.gain,.prec,.voices li{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-    .faq details{break-inside:avoid}
     .faq details p{display:block}
-    a{color:var(--ink)}
+    .future{grid-template-columns:repeat(3,1fr)}
+    .wrap,.card,.sum,.rules,.faq,.decide,.tt,.voices,.why{display:block}
+    .wrap > * + *{margin-top:10px}
+    .card > * + *,.sum > * + *{margin-top:8px}
+    .rules li,.decide li,.faq details,.tt div,.voices li,.why li{margin-bottom:8px}
+    .end{break-inside:avoid;padding:20px}
+    .end img{width:70px}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   }
 </style>
 </head>
@@ -182,8 +214,8 @@
       <div><dt>なにを</dt><dd>会員企業が、毎月くり返す事務を1つ選び、AIで「自動で回る形」にする入口までを体験する2時間のセミナー</dd></div>
       <div><dt>だれに</dt><dd>会員企業の経営者・事務担当の方（15名程度）</dd></div>
       <div><dt>なぜいま</dt><dd>中小企業の6割が人手不足です。<br>11月19日のAI体験セミナーに続く「次の一歩」としてご案内できます。</dd></div>
-      <div><dt>御会のご負担</dt><dd>日程と会場、告知です。<br>告知文・チラシのたたき台・当日資料はこちらで用意します。</dd></div>
-      <div><dt>中立性</dt><dd>講座名に事業者名を出さない、売らない、名簿は御会が持つ、事後の相談は御会の窓口へ。<br>8つのお約束でお受けします（3章）。</dd></div>
+      <div><dt>御会のご負担</dt><dd>日程と会場、告知です。<br>当日の資料は、こちらで用意します。</dd></div>
+      <div><dt>中立性</dt><dd>講座名に事業者名を出さない、売らない、名簿は御会の規定どおり、事後の相談は御会の窓口とビジネスお助け隊へ。<br>8つのお約束でお受けします（3章）。</dd></div>
     </dl>
   </section>
 
@@ -206,9 +238,9 @@
   <section class="card" aria-labelledby="s2">
     <h2 id="s2"><span class="no">2</span>このセミナーで、会員企業に見せたい未来</h2>
     <div class="future">
-      <div class="fu"><span class="ic" aria-hidden="true">🛟</span><b>人が辞めても、仕事が止まらない</b><p>毎月の事務を手順どおりにAIが進めるので、担当者が抜けたときの引き継ぎの穴が小さくなります。</p></div>
-      <div class="fu"><span class="ic" aria-hidden="true">🌱</span><b>新しい人が、初日から同じ型で回せる</b><p>AIへの指示書と手順が、そのまま新人向けのマニュアルになります。</p></div>
-      <div class="fu"><span class="ic" aria-hidden="true">🏛️</span><b>仕組みが、会社の資産になる</b><p>指示書・手順・自動化の流れが、社内に積み上がります。<br>始めた分だけ、次の人に渡せるものが増えていきます。</p></div>
+      <div class="fu"><span class="ic" aria-hidden="true">01</span><b>人が辞めても、仕事が止まらない</b><p>毎月の事務を手順どおりにAIが進めるので、担当者が抜けたときの引き継ぎの穴が小さくなります。</p></div>
+      <div class="fu"><span class="ic" aria-hidden="true">02</span><b>新しい人が、初日から同じ型で回せる</b><p>AIへの指示書と手順が、そのまま新人向けのマニュアルになります。</p></div>
+      <div class="fu"><span class="ic" aria-hidden="true">03</span><b>仕組みが、会社の資産になる</b><p>指示書・手順・自動化の流れが、社内に積み上がります。<br>始めた分だけ、次の人に渡せるものが増えていきます。</p></div>
     </div>
     <h3 class="h3t">「見て終わり」にしないのが、この会の違いです</h3>
     <div class="vs">
@@ -230,23 +262,23 @@
     <h2 id="s3"><span class="no">3</span>一社に肩入れしない形で、お受けします</h2>
     <p>御会が中立の立場であることは、私たちにとっても大切です。<br>「特定の事業者の宣伝の場になった」と見えないよう、次の8つをお約束します。</p>
     <ol class="rules">
-      <li class="key"><span class="n">1</span><div><b>主役はテーマ。講座名に事業者名を出しません</b><p>主催は御会です。<br>告知とチラシは「会員企業の事務をAIで回す」というテーマで組み、講師の所属は講師紹介の欄だけに書きます。<br>告知文に、特定のAIサービスの名前も出しません。</p></div></li>
+      <li class="key"><span class="n">1</span><div><b>主役はテーマ。講座名に事業者名を出しません</b><p>主催は御会です。<br>告知文とチラシは、御会でいつもどおりお作りいただく前提です。<br>講師の所属は講師紹介の欄だけで十分です。<br>ご希望があれば、講座内容の説明文の案やチラシのデザイン案もお出しします。<br>その場合も、事業者名や特定のAIサービスの名前は前に出しません。<br>体裁は御会の様式に合わせ、文面と掲載の最終判断は御会でお願いします。</p></div></li>
       <li class="key"><span class="n">2</span><div><b>売りません。勧誘も、あとからの営業連絡もしません</b><p>当日も事後も、講師から参加者へのご案内・勧誘はしません。<br>配布資料に、講師側の申込先・料金・LINEなどの窓口は載せません。<br>実演の画面でも、講師の会社名やサービス名は伏せて見せます。</p></div></li>
-      <li class="key"><span class="n">3</span><div><b>参加者の名簿は、御会がお持ちください</b><p>申込とアンケートは御会のフォームで行い、講師に参加者の連絡先をお渡しいただく必要はありません。<br>アンケートの集計結果だけ共有いただければ、次回の改善に使います。</p></div></li>
-      <li class="key"><span class="n">4</span><div><b>事後の相談は、御会の窓口へおつなぎします</b><p>「うちでもやってみたい」という声は、御会のIT相談やデジタル出張相談などの窓口へご案内します。<br>会員企業の次の一歩が、御会の支援につながる流れです。</p></div></li>
+      <li class="key"><span class="n">3</span><div><b>参加者の名簿は、御会の規定どおりに</b><p>申込とアンケートは御会のフォームで行います。<br>名簿を講師と共有するかどうかは、御会の規定でご判断ください。<br>共有がなくても運営できます。<br>共有いただける場合も、当日の受付と準備だけに使い、事後のご連絡には使いません。<br>アンケートは、次回の改善のために、個人や会社が特定されない集計の形で共有をお願いします。</p></div></li>
+      <li class="key"><span class="n">4</span><div><b>事後の相談は、御会の窓口とビジネスお助け隊へおつなぎします</b><p>「うちでもやってみたい」という声は、御会のIT相談・デジタル出張相談や、ビジネスお助け隊の無料個別相談へご案内します。<br>お助け隊の相談は、お助け隊の決まりに沿って行います。<br>担当はいつもの割り振りで決まり、講師が役員の1人として担当することもあります（無料）。<br>会社の側から講師に研修のご依頼があった場合に限り、御会やお助け隊の事業とは切り離し、会社と講師の間の有償の研修として別に契約します。<br>会員企業の次の一歩が、まず御会の支援につながる流れです。</p></div></li>
       <li><span class="n">5</span><div><b>特定のAIサービスを勧めません</b><p>実演は講師の画面で、Anthropic社のClaude Codeを使います（参加者のアカウントは不要です）。<br>ただし教えるのは「仕事の切り出し方」「指示書の書き方」「自動化の型」で、ChatGPT・Gemini・Copilotなどでも使える形で伝えます。<br>どれを選ぶかの比べ方も、中立にご紹介します。</p></div></li>
       <li><span class="n">6</span><div><b>講師謝金は、御会の規定どおりに</b><p>無償でお受けすると、かえって「営業のための登壇」に見えるおそれがあります。<br>ほかの講師の方と同じ規定・同じ扱いでお願いします。</p></div></li>
       <li><span class="n">7</span><div><b>「AI活用シリーズ」の1回として</b><p>3月・11月のAI体験セミナーに続く1回として位置づけます。<br>ほかの回の講師は御会が選び、この会の講師が続けて担うことは前提にしません。</p></div></li>
-      <li><span class="n">8</span><div><b>実績の出し方・撮影・事後の連絡も、御会のルールに従います</b><p>登壇したことを講師側の実績として載せるのは、御会にご了承いただいた範囲・書き方だけです。<br>当日の撮影は御会のご判断に従い、参加者が写る写真は講師側では使いません。<br>参加者から講師へ直接ご連絡があった場合も、まず御会の相談窓口をご案内します。</p></div></li>
+      <li><span class="n">8</span><div><b>実績の出し方・撮影・事後の連絡も、御会のルールに従います</b><p>登壇したことを講師側の実績として載せるのは、御会にご了承いただいた範囲・書き方だけです。<br>当日の撮影は御会のご判断に従い、参加者が写る写真は講師側では使いません。<br>参加者から講師へ直接ご連絡があった場合も、まず御会の相談窓口かお助け隊の無料相談をご案内します。</p></div></li>
     </ol>
     <p class="note">この8つは、講師のご依頼をいただく際に、書面で確認させてください。</p>
-    <h3 class="h3t">会員企業の流れ（講師のところで止めません）</h3>
-    <div class="flow" role="img" aria-label="11月19日のAI体験セミナーから、この会、そして御会の相談窓口へとつながる流れ">
+    <h3 class="h3t">会員企業の流れ（相談の行き先は、御会とお助け隊）</h3>
+    <div class="flow" role="img" aria-label="11月19日のAI体験セミナーから、この会、そして御会の相談窓口とビジネスお助け隊の無料相談へとつながる流れ">
       <div>11月19日<br>AI体験セミナー<br>（AIに触れる）</div>
       <div class="ar" aria-hidden="true">→</div>
       <div>この会<br>（自社の仕事を<br>1つAIに任せる）</div>
       <div class="ar" aria-hidden="true">→</div>
-      <div class="us">御会の<br>IT相談・<br>出張相談へ</div>
+      <div class="us">御会の窓口・<br>お助け隊の<br>無料相談へ</div>
     </div>
   </section>
 
@@ -271,7 +303,7 @@
       <div><dt>時期</dt><dd>2027年1月下旬〜2月の平日14時〜16時（御会のご都合を優先します）</dd></div>
       <div><dt>形</dt><dd>2時間・15名程度・PC持参（11月19日の会と同じ形）</dd></div>
       <div><dt>参加者の準備</dt><dd>AIのアカウントは不要です。<br>全員が自社の指示書を書き、そのうち代表の3〜4件を講師の画面で動かします。<br>ほかの方も、持ち帰りの手順でご自身で試せるようにします。<br>会社の個人情報・お客さま情報は使わず、見本のデータで進めます。</dd></div>
-      <div><dt>告知</dt><dd>開催の約5週間前に会員メールで。<br>告知文とチラシのたたき台はこちらで用意し、御会で整えていただきます。</dd></div>
+      <div><dt>告知</dt><dd>御会のいつもの告知の流れでお願いします。<br>説明文やチラシの案が必要なときは、お出しします（3章の1）。</dd></div>
     </dl>
     <h3 class="h3t">2時間の流れ</h3>
     <div class="tt" aria-label="2時間の流れ">
@@ -280,7 +312,7 @@
       <div><b>0:30</b><span>仕事を切り出す　「毎月くり返す仕事」を1つ選ぶ</span></div>
       <div><b>0:50</b><span>指示書を書く　全員が「AIに渡す指示書」を1枚書き、代表の3〜4件を講師の画面で動かす</span></div>
       <div><b>1:30</b><span>社内に根づかせる　続ける手順と、AIサービスの選び方（中立に）</span></div>
-      <div><b>1:50</b><span>次の一歩　御会の相談窓口のご案内<span class="by">御会ご担当より</span></span></div>
+      <div><b>1:50</b><span>次の一歩　御会の相談窓口・お助け隊の無料相談のご案内<span class="by">御会ご担当より</span></span></div>
     </div>
     <p class="note">最後の10分を御会からのご案内の時間にすると、「御会の事業の1つ」であることが参加者にも伝わります。</p>
   </section>
@@ -289,17 +321,18 @@
     <h2 id="s6"><span class="no">6</span>御会にとって、うれしいこと</h2>
     <div class="gains">
       <div class="gain"><b>11月19日の「その次」がご案内できます</b><p>体験した会員から「次は？」と聞かれたときの受け皿になります。</p></div>
-      <div class="gain"><b>相談窓口へのきっかけになり得ます</b><p>事後の相談を御会の窓口へおつなぎするので、支援事業の入口の1つになり得ます。</p></div>
+      <div class="gain"><b>相談窓口へのきっかけになり得ます</b><p>事後の相談を御会の窓口とお助け隊へおつなぎするので、支援事業の入口の1つになり得ます。</p></div>
       <div class="gain"><b>人手不足対策の、具体例の1つに</b><p>「会員企業の人手不足への取り組み」を示す材料の1つになり得ます。</p></div>
-      <div class="gain"><b>ご負担は、日程と会場と告知です</b><p>資料・告知のたたき台・事後の手順ページまで、こちらで用意します。</p></div>
+      <div class="gain"><b>ご負担は、日程と会場と告知です</b><p>当日の資料と、会員企業が事後に見返せる手順はこちらで用意します。<br>手順は、御会のサイトや配布でもそのまま使える形でお渡しします。</p></div>
     </div>
   </section>
 
   <section class="card" aria-labelledby="s7">
     <h2 id="s7"><span class="no">7</span>上の方から聞かれそうなこと</h2>
     <div class="faq">
-      <details open><summary>一社に肩入れしているように見えませんか。</summary><p>講座名・告知は御会主催のテーマで組み、講師の所属は紹介欄だけにします。<br>売らない・名簿を渡さない・事後の相談は御会の窓口へ、の3点で、講師の側に会員企業を囲い込む流れをつくりません。<br>実績の出し方や撮影も、御会のルールに従います（3章）。</p></details>
-      <details open><summary>あとから参加者に営業がいきませんか。</summary><p>参加者の連絡先は講師に渡らない形で運営できます。<br>当日の資料にも、講師側の申込先や料金は載せません。</p></details>
+      <details open><summary>一社に肩入れしているように見えませんか。</summary><p>講座名・告知は御会主催のテーマで組み、講師の所属は紹介欄だけにします。<br>売らない・名簿は御会の規定どおり・事後の相談は御会の窓口とお助け隊へ、の3点で、講師の側から会員企業に働きかける流れはつくりません。<br>実績の出し方や撮影も、御会のルールに従います（3章）。</p></details>
+      <details open><summary>あとから参加者に営業がいきませんか。</summary><p>講師から参加者へ営業のご連絡はしません。<br>名簿の共有は御会のご判断で、共有いただいた場合も事後のご連絡には使いません。<br>当日の資料にも、講師側の申込先や料金は載せません。</p></details>
+      <details open><summary>その先、講師に頼みたい会社が出たら？</summary><p>まずは御会の窓口や、ビジネスお助け隊の無料個別相談でお受けします。<br>そのうえで、会社のほうから講師に研修を頼みたいとご依頼があった場合は、有償の研修として、会社と講師の間で別に契約します。<br>ほかの専門家や事業者を選ぶことも、もちろん自由です。<br>御会の窓口やお助け隊でも、ほかの専門家や支援策を含めてご案内いただけます。<br>講師側も事業として行っているため、その線を最初からはっきりさせておきます。</p></details>
       <details open><summary>特定のAI製品の宣伝になりませんか。</summary><p>実演はClaude Codeで行いますが、教えるのは仕事の切り出し方と指示書の書き方で、ChatGPT・Gemini・Copilotなどでも使える形です。<br>AIサービスの選び方は、比べ方の観点を中立にお伝えします。</p></details>
       <details open><summary>会社の情報をAIに入れて大丈夫ですか。</summary><p>当日は見本のデータだけを使い、会社の個人情報やお客さま情報は入れません。<br>社内で使うときに気をつけることも、講座の中でお伝えします。</p></details>
       <details open><summary>なぜ無償ではないのですか。</summary><p>無償だと「営業目的の登壇」に見えるおそれがあるためです。<br>ほかの講師の方と同じ規定でお受けするほうが、御会の中立性を保ちやすいと考えています。</p></details>
